@@ -1,0 +1,1151 @@
+/* ==================== RESET Y CONFIGURACIÓN GLOBAL ==================== */
+
+/** Reset de estilos por defecto del navegador **/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables CSS globales */
+:root {
+    /* Colores */
+    --text-color: black;
+    --background-color: white;
+    --secondary-background-color: #F5F5F7;
+    
+    /* Altura dinámica del header (actualizada por JavaScript) */
+    --header-offset: 140px;
+}
+
+/* Scroll suave y compensación para anclas con header fijo */
+html {
+    scroll-padding-top: var(--header-offset);
+    scroll-behavior: smooth;
+}
+
+/* Estilos base del body */
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Quitar decoración de listas */
+ul {
+    list-style: none;
+}
+
+
+/* ==================== HEADER FIJO ==================== */
+
+/* Header fijo en la parte superior del viewport */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+    background: var(--background-color);
+}
+
+/* Compensar el espacio del header fijo en el contenido principal */
+main {
+    margin-top: var(--header-offset);
+}
+
+
+/* ==================== HEADER TOP ==================== */
+
+/* Contenedor superior del header con logo, título y CTA */
+.header-top {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 80px;
+}
+
+/* Título del sitio - centrado horizontalmente en el viewport */
+.nav-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    z-index: 2;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    animation: revealUpCentered 1s ease forwards;
+}
+
+/* Logo - posicionado en el extremo izquierdo */
+.nav-logo {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 120px;
+    height: 40px;
+    object-fit: cover;
+}
+
+/* Botón CTA - posicionado en el extremo derecho */
+.cta {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    display: inline-block;
+    color: var(--text-color);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.cta:hover {
+    color: lightgray;
+}
+
+/* Botón toggle de navegación móvil (oculto por defecto) */
+.nav-toggle {
+    display: none;
+}
+
+
+/* ==================== NAVBAR ==================== */
+
+/* Barra de navegación */
+.navbar {
+    background-color: var(--secondary-background-color);
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* Lista de navegación horizontal */
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.navbar ul li {
+    color: var(--text-color);
+    list-style: none;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Punto separador entre elementos del navbar */
+.navbar ul li:not(:last-child)::after {
+    content: "•";
+    margin: 0 0.6rem;
+    color: #666666;
+    font-size: 0.9rem;
+    line-height: 1;
+    display: inline-block;
+}
+
+/* Enlaces de navegación */
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 200;
+    transition: color 0.18s ease;
+}
+
+.navbar a:hover {
+    color: lightgray;
+}
+
+
+/* ==================== BOTÓN FLOTANTE DE WHATSAPP ==================== */
+
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background: rgb(37, 211, 102);
+    color: #FFF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    text-decoration: none;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 15px;
+    z-index: 100;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.whatsapp-float:hover {
+    background: rgb(25, 165, 80);
+    transform: scale(1.1);
+}
+
+
+/* ==================== SECCIÓN HERO ==================== */
+
+/* Contenedor principal del hero - ocupa todo el viewport disponible */
+.hero {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - var(--header-offset));
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Imagen hero para desktop */
+.hero-image {
+    width: 100vw;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Títulos del hero (si se usan) */
+.hero h2 {
+    font-size: 2.5rem;
+    margin-top: 50px;
+    text-align: center;
+    animation: revealUpCentered 1s ease forwards;
+}
+
+.hero h3 {
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+    text-align: center;
+    animation: revealUpCentered 1.5s ease forwards;
+}
+
+
+/* ==================== CARRUSEL HERO (MÓVIL) ==================== */
+
+/* Carrusel para dispositivos móviles */
+.hero-carousel {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.hero-carousel .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.9s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-carousel .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.hero-carousel .slide.active {
+    opacity: 1;
+}
+
+
+/* ==================== SECCIÓN PROGRAMAS ==================== */
+
+/* Contenedor de la sección programas */
+
+.programas {
+    padding: 60px 20px;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.programas h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.programas > p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* Contenedor de las cards de programas - disposición horizontal */
+.program-cards {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    gap: 1.5rem;
+    padding-top: 30px;
+    flex-wrap: wrap;
+}
+
+
+/* ==================== CARDS DE PROGRAMAS ==================== */
+
+/**
+ * Estructura simplificada:
+ * - La card es el contenedor con position relative
+ * - La imagen y el texto están superpuestos
+ * - No hay espacio extra debajo de la imagen
+ */
+
+.program-card {
+    position: relative;
+    flex: 1 1 300px;
+    max-width: 400px;
+    min-height: 450px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Estilos para que el anchor se comporte como bloque */
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.program-card:hover {
+    transform: scale(1.08);
+    transition: transform 0.5s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen que ocupa toda la card */
+.program-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* Texto superpuesto sobre la imagen */
+.program-card__text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    transition: background 0.3s ease;
+}
+
+/* Hover: aclarar el overlay */
+.program-card:hover .program-card__text {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+/* Hover en el texto: achicar ligeramente el texto */
+.program-card__text:hover h2,
+.program-card__text:hover h3 {
+    transform: scale(0.80);
+    transition: transform 0.5s ease;
+}
+
+/* Al retirar el hover del texto, volver al tamaño original suavemente */
+.program-card__text h2,
+.program-card__text h3 {
+    transition: transform 0.5s ease;
+}
+
+/* Estilos del texto */
+.program-card__text h2,
+.program-card__text h3 {
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    margin: 0;
+    padding: 0;
+}
+
+.program-card__text h3 {
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin-bottom: 8px;
+}
+
+.program-card__text h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+
+/* ==================== ANIMACIONES ==================== */
+
+/* Animación de revelación vertical desde abajo */
+@keyframes revealUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación de revelación manteniendo el centrado horizontal */
+@keyframes revealUpCentered {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 30px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* ==================== SECCIÓN HORARIOS ==================== */
+
+.horarios {
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.horarios h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.horarios > p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.schedule-container {
+    margin-top: 40px;
+}
+
+/* Pestañas de navegación */
+.schedule-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 40px;
+}
+
+.schedule-tab {
+    flex: 1;
+    max-width: 350px;
+    padding: 15px 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    background-color: #e0e0e0;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.schedule-tab:first-child {
+    border-radius: 0;
+}
+
+.schedule-tab:last-child {
+    border-radius: 0;
+}
+
+.schedule-tab.active {
+    background-color: #000;
+    color: #fff;
+}
+
+.schedule-tab:hover:not(.active) {
+    background-color: #d0d0d0;
+}
+
+/* Contenedor de horarios */
+.schedule-content {
+    position: relative;
+}
+
+.schedule-location {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.schedule-location.active {
+    display: block;
+}
+
+.schedule-location h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+/* Tabla de horarios */
+.schedule-table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.schedule-table thead {
+    background-color: #f5f5f5;
+}
+
+.schedule-table th {
+    padding: 15px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #ddd;
+}
+
+.schedule-table td {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #eee;
+}
+
+.schedule-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.schedule-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Animación de fade in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .horarios h2 {
+        font-size: 2rem;
+    }
+    
+    .schedule-tabs {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 20px;
+    }
+    
+    .schedule-tab {
+        max-width: 100%;
+        font-size: 1rem;
+    }
+    
+    .schedule-table {
+        font-size: 0.85rem;
+    }
+    
+    .schedule-table th,
+    .schedule-table td {
+        padding: 10px 12px;
+    }
+}
+
+/* ==================== SECCIÓN INSTRUCTORES ==================== */
+
+.instructores {
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.instructores h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.instructores > p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+/* Grid de instructores */
+.instructores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto 50px;
+}
+
+/* Card de instructor */
+.instructor-card {
+    background-color: var(--background-color);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instructor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen del instructor */
+.instructor-card__image {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    background-color: var(--secondary-background-color);
+}
+
+.instructor-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.instructor-card:hover .instructor-card__image img {
+    transform: scale(1.05);
+}
+
+/* Contenido de la card */
+.instructor-card__content {
+    padding: 30px 25px;
+    text-align: left;
+}
+
+.instructor-card__content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.instructor-card__rank {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.instructor-card__bio {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    font-weight: 300;
+}
+
+/* CTA para ver más instructores */
+.instructores-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn-instructores {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #000;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-instructores:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+/* Responsive para instructores */
+@media (max-width: 768px) {
+    .instructores h2 {
+        font-size: 2rem;
+    }
+    
+    .instructores-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 10px;
+    }
+    
+    .instructor-card__image {
+        height: 300px;
+    }
+    
+    .instructor-card__content {
+        padding: 25px 20px;
+    }
+    
+    .instructor-card__content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .btn-instructores {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ==================== SECCIÓN SEDES ==================== */
+
+.sedes {
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sedes h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.sedes > p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+/* Grid de sedes */
+.sedes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+/* Card de sede */
+.sede-card {
+    background-color: var(--background-color);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 30px 25px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sede-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header de la card con título y badge */
+.sede-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--secondary-background-color);
+}
+
+.sede-card__header h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.sede-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 3px;
+}
+
+/* Información de contacto */
+.sede-card__info {
+    margin-bottom: 20px;
+}
+
+.sede-card__info p {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.sede-card__info p:last-child {
+    margin-bottom: 0;
+}
+
+.sede-card__info i {
+    color: #000;
+    font-size: 1rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* Enlace a detalles */
+.sede-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+    transition: gap 0.3s ease;
+}
+
+.sede-link::after {
+    content: "→";
+    transition: transform 0.3s ease;
+}
+
+.sede-link:hover {
+    gap: 12px;
+}
+
+.sede-link:hover::after {
+    transform: translateX(4px);
+}
+
+/* CTA para ver todas las sedes */
+.sedes-cta {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.sedes-cta__text {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.btn-sedes {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #000;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-sedes:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+/* Responsive para sedes */
+@media (max-width: 768px) {
+    .sedes h2 {
+        font-size: 2rem;
+    }
+    
+    .sedes-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .sede-card {
+        padding: 25px 20px;
+    }
+    
+    .sede-card__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .sede-badge {
+        font-size: 0.65rem;
+    }
+    
+    .btn-sedes {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
+}
+
+
+/* ==================== MEDIA QUERIES - TABLETS ==================== */
+
+/* Tablets e iPad Pro: 2 cards por fila */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .program-cards {
+        gap: 1.5rem;
+        padding: 20px;
+    }
+    
+    .program-card {
+        flex: 0 1 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+        min-height: 400px;
+    }
+    
+    .program-card__text h3 {
+        font-size: 1.2rem;
+    }
+    
+    .program-card__text h2 {
+        font-size: 2rem;
+    }
+}
+
+
+/* ==================== MEDIA QUERIES - MÓVIL ==================== */
+
+@media (max-width: 768px) {
+    
+    /* ----- HERO ----- */
+    
+    /* Ocultar hero desktop y mostrar carrusel */
+    .hero-desktop { 
+        display: none; 
+    }
+    
+    .hero-carousel { 
+        display: block; 
+    }
+    
+    .hero { 
+        align-items: stretch; 
+    }
+    
+    
+    /* ----- HEADER ----- */
+    
+    /* Ocultar título del sitio en móvil */
+    .nav-brand {
+        display: none;
+    }
+    
+    /* Reducir altura del header ya que el CTA estará sobre el navbar */
+    .header-top {
+        height: 80px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 20px;
+        position: relative;
+    }
+    
+    /* Centrar logo en el viewport */
+    .nav-logo {
+        position: static;
+        transform: none;
+        width: 180px;
+        height: 60px;
+        margin: 0;
+    }
+    
+    /* CTA siempre visible debajo del logo en móvil */
+    .cta {
+        position: static;
+        transform: none;
+        display: block;
+        margin: 12px auto 0;
+        padding: 10px 20px;
+        white-space: nowrap;
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-align: center;
+        max-width: 200px;
+    }
+    
+    /* ----- NAVEGACIÓN MÓVIL ----- */
+    
+    /* Botón hamburguesa */
+    .nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        background: var(--background-color);
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        right: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1001;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Barra del icono hamburguesa */
+    .nav-toggle .bar {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: #333;
+        position: relative;
+        transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    
+    .nav-toggle .bar::before,
+    .nav-toggle .bar::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 24px;
+        height: 2px;
+        background: #333;
+        transition: transform 0.25s ease;
+    }
+    
+    .nav-toggle .bar::before { 
+        top: -7px; 
+    }
+    
+    .nav-toggle .bar::after { 
+        top: 7px; 
+    }
+    
+    /* Animación del hamburguesa a X cuando está abierto */
+    .nav-toggle.open .bar { 
+        background: transparent; 
+    }
+    
+    .nav-toggle.open .bar::before { 
+        transform: translateY(7px) rotate(45deg); 
+    }
+    
+    .nav-toggle.open .bar::after { 
+        transform: translateY(-7px) rotate(-45deg); 
+    }
+    
+    /* Navbar: sin franja de color en móvil cuando está cerrado */
+    .navbar {
+        height: auto;
+        min-height: 0;
+        background-color: transparent;
+    }
+    
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        padding: 20px 12px;
+        background-color: var(--secondary-background-color);
+        margin: 0;
+    }
+    
+    .navbar.open ul {
+        display: flex;
+    }
+    
+    .navbar ul li {
+        display: block;
+        text-align: center;
+        padding: 12px 0;
+    }
+    
+    .navbar ul li a {
+        display: block;
+        color: var(--text-color);
+        font-size: 1rem;
+        font-weight: 400;
+        padding: 8px 20px;
+        transition: background-color 0.2s ease;
+    }
+    
+    .navbar ul li a:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+        color: var(--text-color);
+    }
+    
+    /* Ocultar separadores de puntos en menú móvil */
+    .navbar ul li:not(:last-child)::after {
+        display: none;
+    }
+    
+    /* ----- PROGRAMAS ----- */
+    
+    /* Apilar cards verticalmente en móvil */
+    .program-cards {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        padding-top: 20px;
+    }
+    
+    .program-card {
+        flex: none;
+        width: 100%;
+        max-width: 500px;
+        min-height: 350px;
+    }
+    
+    .program-card__text h3 {
+        font-size: 1.1rem;
+    }
+    
+    .program-card__text h2 {
+        font-size: 1.8rem;
+    }
+}
