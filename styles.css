@@ -930,6 +930,337 @@ nav a {
     }
 }
 
+/* ==================== SECCIÓN FAQS ==================== */
+
+.faqs {
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.faqs h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.faqs > p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+/* Contenedor de preguntas */
+.faqs-container {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+/* Item de pregunta frecuente */
+.faq-item {
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 0;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 20px 0;
+    background: none;
+    border: none;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+    color: #666;
+}
+
+.faq-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 15px;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 0 0 20px 0;
+}
+
+.faq-answer p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+}
+
+/* CTA para ver más FAQs */
+.faqs-cta {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.faqs-cta__text {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.btn-faqs {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #000;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-faqs:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+/* Responsive para FAQs */
+@media (max-width: 768px) {
+    .faqs h2 {
+        font-size: 2rem;
+    }
+    
+    .faq-question {
+        font-size: 1rem;
+        padding: 18px 0;
+    }
+    
+    .faq-icon {
+        font-size: 1.1rem;
+    }
+    
+    .btn-faqs {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
+}
+
+
+/* ==================== SECCIÓN CONTACTO ==================== */
+
+.contacto {
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contacto h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.contacto > p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+/* Grid de contacto */
+.contacto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto 50px;
+}
+
+/* Card de contacto */
+.contacto-card {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.contacto-card__icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    background-color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.contacto-card:hover .contacto-card__icon {
+    transform: scale(1.1);
+    background-color: #333;
+}
+
+.contacto-card__icon i {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.contacto-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.contacto-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.contacto-card a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contacto-card a:hover {
+    color: #666;
+}
+
+/* Redes sociales */
+.contacto-social {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--secondary-background-color);
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contacto-social h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+    background-color: #333;
+}
+
+.social-link i {
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+/* Responsive para contacto */
+@media (max-width: 768px) {
+    .contacto h2 {
+        font-size: 2rem;
+    }
+    
+    .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .social-links {
+        gap: 15px;
+    }
+    
+    .social-link {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .social-link i {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* ==================== PÁGINA DE FAQS DETALLE ==================== */
+
+.page-faqs {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.faqs-category {
+    margin-bottom: 50px;
+}
+
+.faqs-category h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--secondary-background-color);
+}
+
+/* Hero de página interna */
+.page-hero {
+    padding: 80px 20px 60px;
+    text-align: center;
+    background-color: var(--secondary-background-color);
+}
+
+.page-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.page-hero p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+
+
 
 /* ==================== MEDIA QUERIES - TABLETS ==================== */
 
@@ -983,23 +1314,24 @@ nav a {
         display: none;
     }
     
-    /* Reducir altura del header ya que el CTA estará sobre el navbar */
+    /* Aumentar altura del header para que el logo quepa */
     .header-top {
-        height: 80px;
+        height: 120px;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        padding: 12px 20px;
+        padding: 16px 20px;
         position: relative;
     }
     
-    /* Centrar logo en el viewport */
+    /* Centrar logo en el viewport con espacio arriba */
     .nav-logo {
         position: static;
         transform: none;
-        width: 180px;
-        height: 60px;
-        margin: 0;
+        width: 140px;
+        height: 47px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
     
     /* CTA siempre visible debajo del logo en móvil */
@@ -1011,7 +1343,7 @@ nav a {
         padding: 10px 20px;
         white-space: nowrap;
         font-size: 0.9rem;
-        font-weight: 500;
+        font-weight: 700;
         text-align: center;
         max-width: 200px;
     }
@@ -1147,5 +1479,17 @@ nav a {
     
     .program-card__text h2 {
         font-size: 1.8rem;
+    }
+
+    .page-hero {
+        padding: 60px 20px 40px;
+    }
+    
+    .page-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .page-hero p {
+        font-size: 1rem;
     }
 }
