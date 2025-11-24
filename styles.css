@@ -13,7 +13,7 @@
     --text-color: black;
     --background-color: white;
     --secondary-background-color: #F5F5F7;
-    
+
     /* Altura dinámica del header (actualizada por JavaScript) */
     --header-offset: 140px;
 }
@@ -27,7 +27,7 @@ html {
 /* Estilos base del body */
 body {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 100;
+    font-weight: 300;
     background-color: var(--background-color);
     color: var(--text-color);
 }
@@ -277,7 +277,7 @@ nav a {
 /* Contenedor de la sección programas */
 
 .programas {
-    padding: 60px 20px;
+    padding: 25px 20px 40px 20px;
     text-align: center;
     margin: 0 auto;
     max-width: 1200px;
@@ -289,7 +289,7 @@ nav a {
     margin-bottom: 10px;
 }
 
-.programas > p {
+.programas>p {
     font-size: 1rem;
     color: #666;
     margin-bottom: 40px;
@@ -320,7 +320,7 @@ nav a {
     position: relative;
     flex: 1 1 300px;
     max-width: 400px;
-    min-height: 450px;
+    min-height: 380px;
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -413,6 +413,7 @@ nav a {
         opacity: 0;
         transform: translateY(40px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -425,6 +426,7 @@ nav a {
         opacity: 0;
         transform: translate(-50%, 30px);
     }
+
     to {
         opacity: 1;
         transform: translate(-50%, 0);
@@ -434,7 +436,7 @@ nav a {
 /* ==================== SECCIÓN HORARIOS ==================== */
 
 .horarios {
-    padding: 60px 20px;
+    padding: 25px 20px 40px 20px;
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -446,7 +448,7 @@ nav a {
     margin-bottom: 10px;
 }
 
-.horarios > p {
+.horarios>p {
     font-size: 1rem;
     color: #666;
     margin-bottom: 40px;
@@ -561,6 +563,7 @@ nav a {
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -572,22 +575,22 @@ nav a {
     .horarios h2 {
         font-size: 2rem;
     }
-    
+
     .schedule-tabs {
         flex-direction: column;
         gap: 10px;
         padding: 0 20px;
     }
-    
+
     .schedule-tab {
         max-width: 100%;
         font-size: 1rem;
     }
-    
+
     .schedule-table {
         font-size: 0.85rem;
     }
-    
+
     .schedule-table th,
     .schedule-table td {
         padding: 10px 12px;
@@ -597,7 +600,7 @@ nav a {
 /* ==================== SECCIÓN INSTRUCTORES ==================== */
 
 .instructores {
-    padding: 60px 20px;
+    padding: 25px 20px 40px 20px;
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -609,7 +612,7 @@ nav a {
     margin-bottom: 10px;
 }
 
-.instructores > p {
+.instructores>p {
     font-size: 1rem;
     color: #666;
     margin-bottom: 50px;
@@ -716,25 +719,25 @@ nav a {
     .instructores h2 {
         font-size: 2rem;
     }
-    
+
     .instructores-grid {
         grid-template-columns: 1fr;
         gap: 30px;
         padding: 0 10px;
     }
-    
+
     .instructor-card__image {
         height: 300px;
     }
-    
+
     .instructor-card__content {
         padding: 25px 20px;
     }
-    
+
     .instructor-card__content h3 {
         font-size: 1.3rem;
     }
-    
+
     .btn-instructores {
         padding: 12px 30px;
         font-size: 0.9rem;
@@ -744,7 +747,7 @@ nav a {
 /* ==================== SECCIÓN SEDES ==================== */
 
 .sedes {
-    padding: 60px 20px;
+    padding: 25px 20px 40px 20px;
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -756,7 +759,7 @@ nav a {
     margin-bottom: 10px;
 }
 
-.sedes > p {
+.sedes>p {
     font-size: 1rem;
     color: #666;
     margin-bottom: 50px;
@@ -903,27 +906,27 @@ nav a {
     .sedes h2 {
         font-size: 2rem;
     }
-    
+
     .sedes-grid {
         grid-template-columns: 1fr;
         gap: 20px;
         padding: 0 10px;
     }
-    
+
     .sede-card {
         padding: 25px 20px;
     }
-    
+
     .sede-card__header {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
     }
-    
+
     .sede-badge {
         font-size: 0.65rem;
     }
-    
+
     .btn-sedes {
         padding: 12px 30px;
         font-size: 0.9rem;
@@ -933,7 +936,7 @@ nav a {
 /* ==================== SECCIÓN FAQS ==================== */
 
 .faqs {
-    padding: 60px 20px;
+    padding: 25px 20px 40px 20px;
     text-align: center;
     max-width: 1000px;
     margin: 0 auto;
@@ -945,7 +948,7 @@ nav a {
     margin-bottom: 10px;
 }
 
-.faqs > p {
+.faqs>p {
     font-size: 1rem;
     color: #666;
     margin-bottom: 50px;
@@ -1052,16 +1055,16 @@ nav a {
     .faqs h2 {
         font-size: 2rem;
     }
-    
+
     .faq-question {
         font-size: 1rem;
         padding: 18px 0;
     }
-    
+
     .faq-icon {
         font-size: 1.1rem;
     }
-    
+
     .btn-faqs {
         padding: 12px 30px;
         font-size: 0.9rem;
@@ -1072,7 +1075,7 @@ nav a {
 /* ==================== SECCIÓN CONTACTO ==================== */
 
 .contacto {
-    padding: 60px 20px;
+    padding: 25px 20px 40px 20px;
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -1084,7 +1087,7 @@ nav a {
     margin-bottom: 10px;
 }
 
-.contacto > p {
+.contacto>p {
     font-size: 1rem;
     color: #666;
     margin-bottom: 50px;
@@ -1134,9 +1137,9 @@ nav a {
 }
 
 .contacto-card p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.6;
-    color: #555;
+    color: black;
     margin-bottom: 8px;
 }
 
@@ -1200,21 +1203,21 @@ nav a {
     .contacto h2 {
         font-size: 2rem;
     }
-    
+
     .contacto-grid {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-    
+
     .social-links {
         gap: 15px;
     }
-    
+
     .social-link {
         width: 45px;
         height: 45px;
     }
-    
+
     .social-link i {
         font-size: 1.2rem;
     }
@@ -1226,7 +1229,7 @@ nav a {
 .page-faqs {
     max-width: 900px;
     margin: 0 auto;
-    padding: 60px 20px;
+    padding: 25px 20px 40px 20px;
 }
 
 .faqs-category {
@@ -1270,17 +1273,17 @@ nav a {
         gap: 1.5rem;
         padding: 20px;
     }
-    
+
     .program-card {
         flex: 0 1 calc(50% - 1rem);
         max-width: calc(50% - 1rem);
-        min-height: 400px;
+        min-height: 360px;
     }
-    
+
     .program-card__text h3 {
         font-size: 1.2rem;
     }
-    
+
     .program-card__text h2 {
         font-size: 2rem;
     }
@@ -1290,30 +1293,30 @@ nav a {
 /* ==================== MEDIA QUERIES - MÓVIL ==================== */
 
 @media (max-width: 768px) {
-    
+
     /* ----- HERO ----- */
-    
+
     /* Ocultar hero desktop y mostrar carrusel */
-    .hero-desktop { 
-        display: none; 
+    .hero-desktop {
+        display: none;
     }
-    
-    .hero-carousel { 
-        display: block; 
+
+    .hero-carousel {
+        display: block;
     }
-    
-    .hero { 
-        align-items: stretch; 
+
+    .hero {
+        align-items: stretch;
     }
-    
-    
+
+
     /* ----- HEADER ----- */
-    
+
     /* Ocultar título del sitio en móvil */
     .nav-brand {
         display: none;
     }
-    
+
     /* Aumentar altura del header para que el logo quepa */
     .header-top {
         height: 120px;
@@ -1323,7 +1326,7 @@ nav a {
         padding: 16px 20px;
         position: relative;
     }
-    
+
     /* Centrar logo en el viewport con espacio arriba */
     .nav-logo {
         position: static;
@@ -1333,7 +1336,7 @@ nav a {
         margin-top: 10px;
         margin-bottom: 10px;
     }
-    
+
     /* CTA siempre visible debajo del logo en móvil */
     .cta {
         position: static;
@@ -1347,9 +1350,9 @@ nav a {
         text-align: center;
         max-width: 200px;
     }
-    
+
     /* ----- NAVEGACIÓN MÓVIL ----- */
-    
+
     /* Botón hamburguesa */
     .nav-toggle {
         display: flex;
@@ -1368,7 +1371,7 @@ nav a {
         border-radius: 8px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-    
+
     /* Barra del icono hamburguesa */
     .nav-toggle .bar {
         display: block;
@@ -1378,7 +1381,7 @@ nav a {
         position: relative;
         transition: transform 0.25s ease, opacity 0.25s ease;
     }
-    
+
     .nav-toggle .bar::before,
     .nav-toggle .bar::after {
         content: '';
@@ -1389,35 +1392,35 @@ nav a {
         background: #333;
         transition: transform 0.25s ease;
     }
-    
-    .nav-toggle .bar::before { 
-        top: -7px; 
+
+    .nav-toggle .bar::before {
+        top: -7px;
     }
-    
-    .nav-toggle .bar::after { 
-        top: 7px; 
+
+    .nav-toggle .bar::after {
+        top: 7px;
     }
-    
+
     /* Animación del hamburguesa a X cuando está abierto */
-    .nav-toggle.open .bar { 
-        background: transparent; 
+    .nav-toggle.open .bar {
+        background: transparent;
     }
-    
-    .nav-toggle.open .bar::before { 
-        transform: translateY(7px) rotate(45deg); 
+
+    .nav-toggle.open .bar::before {
+        transform: translateY(7px) rotate(45deg);
     }
-    
-    .nav-toggle.open .bar::after { 
-        transform: translateY(-7px) rotate(-45deg); 
+
+    .nav-toggle.open .bar::after {
+        transform: translateY(-7px) rotate(-45deg);
     }
-    
+
     /* Navbar: sin franja de color en móvil cuando está cerrado */
     .navbar {
         height: auto;
         min-height: 0;
         background-color: transparent;
     }
-    
+
     .navbar ul {
         display: none;
         flex-direction: column;
@@ -1426,17 +1429,17 @@ nav a {
         background-color: var(--secondary-background-color);
         margin: 0;
     }
-    
+
     .navbar.open ul {
         display: flex;
     }
-    
+
     .navbar ul li {
         display: block;
         text-align: center;
         padding: 12px 0;
     }
-    
+
     .navbar ul li a {
         display: block;
         color: var(--text-color);
@@ -1445,19 +1448,19 @@ nav a {
         padding: 8px 20px;
         transition: background-color 0.2s ease;
     }
-    
+
     .navbar ul li a:hover {
         background-color: rgba(0, 0, 0, 0.05);
         color: var(--text-color);
     }
-    
+
     /* Ocultar separadores de puntos en menú móvil */
     .navbar ul li:not(:last-child)::after {
         display: none;
     }
-    
+
     /* ----- PROGRAMAS ----- */
-    
+
     /* Apilar cards verticalmente en móvil */
     .program-cards {
         flex-direction: column;
@@ -1465,18 +1468,18 @@ nav a {
         align-items: center;
         padding-top: 20px;
     }
-    
+
     .program-card {
         flex: none;
         width: 100%;
         max-width: 500px;
-        min-height: 350px;
+        min-height: 320px;
     }
-    
+
     .program-card__text h3 {
         font-size: 1.1rem;
     }
-    
+
     .program-card__text h2 {
         font-size: 1.8rem;
     }
@@ -1484,11 +1487,11 @@ nav a {
     .page-hero {
         padding: 60px 20px 40px;
     }
-    
+
     .page-hero h1 {
         font-size: 2rem;
     }
-    
+
     .page-hero p {
         font-size: 1rem;
     }
