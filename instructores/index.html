@@ -73,86 +73,114 @@
 
     <!-- ==================== MAIN CONTENT ==================== -->
     <main>
-        <section class="instructors-page">
-            <div class="instructors-page__header">
-                <h1>Nuestros Instructores</h1>
-                <p>Un equipo de profesionales dedicados a tu desarrollo en el Jiu Jitsu</p>
+        <!-- Menú de navegación sticky para instructores -->
+        <nav class="instructors-nav">
+            <div class="instructors-nav__container">
+                <a href="#juan-pablo-garcia" class="instructors-nav__btn active" data-target="juan-pablo-garcia">
+                    Juan Pablo<br><span>EDJ HQ</span>
+                </a>
+                <a href="#fabian-soto" class="instructors-nav__btn" data-target="fabian-soto">
+                    Fabian Soto<br><span>EDJ Las Condes</span>
+                </a>
+                <a href="#maria-jesus-rojas" class="instructors-nav__btn" data-target="maria-jesus-rojas">
+                    María Jesús<br><span>EDJ Las Condes</span>
+                </a>
+                <a href="#diego-pena" class="instructors-nav__btn" data-target="diego-pena">
+                    Diego Peña<br><span>EDJ Chillán</span>
+                </a>
+                <a href="#javier-jeria" class="instructors-nav__btn" data-target="javier-jeria">
+                    Javier Jeria<br><span>EDJ V Región</span>
+                </a>
             </div>
+        </nav>
 
-            <div class="instructors-page__grid">
-                <!-- Instructor 1: Fabian Soto -->
-                <div class="instructor-card instructor-card--large">
-                    <div class="instructor-card__image">
-                        <img src="../assets/img/fabian.jpeg" alt="Fabián Soto">
-                    </div>
-                    <div class="instructor-card__content">
-                        <h3>Fabian Soto</h3>
-                        <p class="instructor-card__rank">Cinturón Negro - 1er grado</p>
-                        <p class="instructor-card__bio">
-                            Cinturón Negro con más de 15 años de experiencia formando estudiantes en técnicas avanzadas
-                            de Jiu Jitsu brasileño. Lidera el equipo EDJ Chile con pasión y excelencia técnica.
-                        </p>
-                    </div>
+        <!-- Sección Juan Pablo García -->
+        <section class="instructor-detail" id="juan-pablo-garcia">
+            <div class="instructor-detail__container">
+                <div class="instructor-detail__image">
+                    <img src="../assets/img/Juan.jpeg" alt="Juan Pablo García">
                 </div>
-
-                <!-- Instructor 2: María Jesús Rojas -->
-                <div class="instructor-card">
-                    <div class="instructor-card__image">
-                        <img src="../assets/img/jesu.jpeg" alt="María Jesús Rojas">
-                    </div>
-                    <div class="instructor-card__content">
-                        <h3>María Jesús Rojas</h3>
-                        <p class="instructor-card__rank">Cinturón Negro</p>
-                        <p class="instructor-card__bio">
-                            Instructora certificada especializada en clases para niños y mujeres, creando ambientes
-                            seguros y motivadores para el aprendizaje y desarrollo personal.
-                        </p>
-                    </div>
+                <div class="instructor-detail__content">
+                    <h2>Juan Pablo García</h2>
+                    <p class="instructor-detail__rank">Cinturón Negro - 4to grado</p>
+                    <p class="instructor-detail__role">Fundador EDJ | Profesor EDJ USA | Director EDJ HQ</p>
+                    <p class="instructor-detail__bio">
+                        Fundador de EDJ y profesor en EDJ USA. Como director de EDJ HQ, lidera la expansión y desarrollo
+                        técnico de la academia, formando instructores de alto nivel en Brazilian Jiu Jitsu.
+                    </p>
                 </div>
+            </div>
+        </section>
 
-                <!-- Instructor 3: Juan Pablo García -->
-                <div class="instructor-card">
-                    <div class="instructor-card__image placeholder">
-                        <img src="../assets/img/EDJ_LOGO_1.png" alt="Juan Pablo García">
-                    </div>
-                    <div class="instructor-card__content">
-                        <h3>Juan Pablo García</h3>
-                        <p class="instructor-card__rank">EDJ HQ</p>
-                        <p class="instructor-card__bio">
-                            Profesor formado por Fabián Soto, dedicado a la enseñanza técnica y el desarrollo de los
-                            alumnos en la sede central.
-                        </p>
-                    </div>
+        <!-- Sección Fabian Soto -->
+        <section class="instructor-detail instructor-detail--alt" id="fabian-soto">
+            <div class="instructor-detail__container">
+                <div class="instructor-detail__content">
+                    <h2>Fabian Soto</h2>
+                    <p class="instructor-detail__rank">Cinturón Negro - 1er grado</p>
+                    <p class="instructor-detail__role">Head Coach EDJ Providencia y Las Condes</p>
+                    <p class="instructor-detail__bio">
+                        Cinturón Negro bajo la dirección del profesor Juan Pablo García, con más de 15 años de
+                        experiencia formando estudiantes en técnicas avanzadas de Jiu Jitsu brasileño. Lidera el equipo
+                        EDJ Chile con pasión y excelencia técnica.
+                    </p>
                 </div>
-
-                <!-- Instructor 4: Diego Peña -->
-                <div class="instructor-card">
-                    <div class="instructor-card__image placeholder">
-                        <img src="../assets/img/EDJ_LOGO_1.png" alt="Diego Peña">
-                    </div>
-                    <div class="instructor-card__content">
-                        <h3>Diego Peña</h3>
-                        <p class="instructor-card__rank">Director EDJ Chillán</p>
-                        <p class="instructor-card__bio">
-                            Líder de nuestra filial en Chillán, expandiendo la filosofía y técnica de EDJ hacia el sur
-                            del país.
-                        </p>
-                    </div>
+                <div class="instructor-detail__image">
+                    <img src="../assets/img/fabian.jpeg" alt="Fabián Soto">
                 </div>
+            </div>
+        </section>
 
-                <!-- Instructor 5: Javier Jeria -->
-                <div class="instructor-card">
-                    <div class="instructor-card__image placeholder">
-                        <img src="../assets/img/EDJ_LOGO_1.png" alt="Javier Jeria">
-                    </div>
-                    <div class="instructor-card__content">
-                        <h3>Javier Jeria</h3>
-                        <p class="instructor-card__rank">Director EDJ V Región</p>
-                        <p class="instructor-card__bio">
-                            Encargado de la instrucción y desarrollo del equipo en la V Región, promoviendo el Jiu Jitsu
-                            de alto nivel.
-                        </p>
-                    </div>
+        <!-- Sección María Jesús Rojas -->
+        <section class="instructor-detail" id="maria-jesus-rojas">
+            <div class="instructor-detail__container">
+                <div class="instructor-detail__image">
+                    <img src="../assets/img/jesu.jpeg" alt="María Jesús Rojas">
+                </div>
+                <div class="instructor-detail__content">
+                    <h2>María Jesús Rojas</h2>
+                    <p class="instructor-detail__rank">Cinturón Negro</p>
+                    <p class="instructor-detail__role">Head Coach EDJ Las Condes y Providencia</p>
+                    <p class="instructor-detail__bio">
+                        Cinturón Negro bajo la dirección del profesor Fabián Soto. Especializada en clases para niños y
+                        mujeres, creando ambientes seguros y motivadores para el aprendizaje y desarrollo personal.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Diego Peña -->
+        <section class="instructor-detail instructor-detail--alt" id="diego-pena">
+            <div class="instructor-detail__container">
+                <div class="instructor-detail__content">
+                    <h2>Diego Peña</h2>
+                    <p class="instructor-detail__rank">Cinturón Marrón</p>
+                    <p class="instructor-detail__role">Head Coach EDJ Chillán</p>
+                    <p class="instructor-detail__bio">
+                        Cinturón Marrón bajo la dirección del profesor Fabián Soto. Líder de nuestra filial en Chillán,
+                        expandiendo la filosofía y técnica de EDJ hacia el sur del país.
+                    </p>
+                </div>
+                <div class="instructor-detail__image">
+                    <img src="../assets/img/Diego.jpeg" alt="Diego Peña">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Javier Jeria -->
+        <section class="instructor-detail" id="javier-jeria">
+            <div class="instructor-detail__container">
+                <div class="instructor-detail__image">
+                    <img src="../assets/img/Javier.jpeg" alt="Javier Jeria">
+                </div>
+                <div class="instructor-detail__content">
+                    <h2>Javier Jeria</h2>
+                    <p class="instructor-detail__rank">Cinturón Marrón</p>
+                    <p class="instructor-detail__role">Head Coach EDJ V Región</p>
+                    <p class="instructor-detail__bio">
+                        Cinturón Marrón bajo la dirección del profesor Fabián Soto. Encargado de la instrucción y
+                        desarrollo del equipo en la V Región, promoviendo el Jiu Jitsu de alto nivel.
+                    </p>
                 </div>
             </div>
         </section>
@@ -209,6 +237,86 @@
                         }
                     });
                 });
+            })();
+
+            // ========== NAVEGACIÓN DE INSTRUCTORES ==========
+            (function initInstructorsNav() {
+                var navButtons = document.querySelectorAll('.instructors-nav__btn');
+                var sections = document.querySelectorAll('.instructor-detail');
+
+                if (!navButtons.length || !sections.length) return;
+
+                // Función para actualizar el botón activo
+                function updateActiveButton(targetId) {
+                    navButtons.forEach(function (btn) {
+                        if (btn.getAttribute('data-target') === targetId) {
+                            btn.classList.add('active');
+                        } else {
+                            btn.classList.remove('active');
+                        }
+                    });
+                }
+
+                // Click en botones
+                navButtons.forEach(function (btn) {
+                    btn.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        var targetId = this.getAttribute('data-target');
+                        var targetSection = document.getElementById(targetId);
+
+                        if (targetSection) {
+                            // En desktop (navbar vertical), solo considerar el header
+                            // En mobile (navbar horizontal sticky), considerar header + navbar
+                            var header = document.querySelector('header');
+                            var instructorsNav = document.querySelector('.instructors-nav');
+                            var isDesktop = window.innerWidth > 1024;
+
+                            var offset = header ? header.offsetHeight : 0;
+                            if (!isDesktop && instructorsNav) {
+                                offset += instructorsNav.offsetHeight;
+                            }
+
+                            var targetPosition = targetSection.offsetTop - offset;
+
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+
+                            updateActiveButton(targetId);
+                        }
+                    });
+                });
+
+                // Actualizar botón activo al hacer scroll
+                var ticking = false;
+                function onScroll() {
+                    if (!ticking) {
+                        window.requestAnimationFrame(function () {
+                            var scrollPos = window.scrollY + window.innerHeight / 2;
+
+                            sections.forEach(function (section) {
+                                var sectionTop = section.offsetTop;
+                                var sectionBottom = sectionTop + section.offsetHeight;
+
+                                if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+                                    updateActiveButton(section.id);
+                                }
+                            });
+
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                }
+
+                window.addEventListener('scroll', onScroll);
+
+                // Actualizar al cargar si hay hash en la URL
+                if (window.location.hash) {
+                    var hashId = window.location.hash.substring(1);
+                    updateActiveButton(hashId);
+                }
             })();
         })();
     </script>

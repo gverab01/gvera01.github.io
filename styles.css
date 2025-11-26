@@ -295,13 +295,13 @@ nav a {
 }
 
 .programas h2 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .programas>p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #666;
     margin-bottom: 20px;
 }
@@ -330,7 +330,7 @@ nav a {
     position: relative;
     flex: 1 1 300px;
     max-width: 400px;
-    min-height: 480px;
+    min-height: 450px;
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -492,13 +492,13 @@ nav a {
 }
 
 .horarios h2 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .horarios>p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #666;
     margin-bottom: 40px;
 }
@@ -518,12 +518,12 @@ nav a {
 .schedule-tab {
     flex: 1;
     max-width: 350px;
-    padding: 15px 30px;
+    padding: 10px 20px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 0.9rem;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     border: none;
     background-color: #e0e0e0;
     color: #666;
@@ -553,21 +553,43 @@ nav a {
     position: relative;
 }
 
-.schedule-location {
+.schedule-day {
     display: none;
     animation: fadeIn 0.4s ease;
 }
 
-.schedule-location.active {
+.schedule-day.active {
     display: block;
 }
 
-.schedule-location h3 {
+.schedule-day h3 {
     font-size: 1.3rem;
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 30px;
     letter-spacing: 1px;
+}
+
+/* Título de ubicación */
+.schedule-location-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 20px 0;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Nota de horario */
+.schedule-note {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-left: 3px solid #000;
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
 }
 
 /* Tabla de horarios */
@@ -656,13 +678,13 @@ nav a {
 }
 
 .instructores h2 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .instructores>p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #666;
     margin-bottom: 20px;
 }
@@ -803,13 +825,13 @@ nav a {
 }
 
 .sedes h2 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .sedes>p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #666;
     margin-bottom: 50px;
 }
@@ -817,9 +839,9 @@ nav a {
 /* Grid de sedes */
 .sedes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto 40px;
 }
 
@@ -827,7 +849,7 @@ nav a {
 .sede-card {
     background-color: var(--background-color);
     border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    border-radius: 0;
     padding: 30px 25px;
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -863,7 +885,7 @@ nav a {
     padding: 4px 10px;
     background-color: #000;
     color: #fff;
-    border-radius: 3px;
+    border-radius: 0;
 }
 
 /* Información de contacto */
@@ -895,7 +917,7 @@ nav a {
 /* Mapa de la sede */
 .sede-card__map {
     margin: 20px 0;
-    border-radius: 8px;
+    border-radius: 0;
     overflow: hidden;
 }
 
@@ -928,39 +950,6 @@ nav a {
     transform: translateX(4px);
 }
 
-/* CTA para ver todas las sedes */
-.sedes-cta {
-    text-align: center;
-    margin-top: 50px;
-    padding-top: 40px;
-    border-top: 1px solid #e0e0e0;
-}
-
-.sedes-cta__text {
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.btn-sedes {
-    display: inline-block;
-    padding: 15px 40px;
-    background-color: #000;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-sedes:hover {
-    background-color: #333;
-    transform: translateY(-2px);
-}
-
 /* Responsive para sedes */
 @media (max-width: 768px) {
     .sedes h2 {
@@ -986,11 +975,6 @@ nav a {
     .sede-badge {
         font-size: 0.65rem;
     }
-
-    .btn-sedes {
-        padding: 12px 30px;
-        font-size: 0.9rem;
-    }
 }
 
 /* ==================== SECCIÓN FAQS ==================== */
@@ -1003,13 +987,13 @@ nav a {
 }
 
 .faqs h2 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .faqs>p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #666;
     margin-bottom: 50px;
 }
@@ -1142,13 +1126,13 @@ nav a {
 }
 
 .contacto h2 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .contacto>p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #666;
     margin-bottom: 50px;
 }
@@ -2120,5 +2104,396 @@ footer p:first-child {
 
     .instructor-card--large .instructor-card__image {
         height: 300px;
+    }
+}
+
+/* ==================== PÁGINA DE INSTRUCTORES (SECCIONES) ==================== */
+
+.instructor-detail {
+    padding: 40px 20px;
+    background-color: #fff;
+}
+
+/* Margen izquierdo en desktop para el navbar vertical */
+@media (min-width: 1025px) {
+    .instructor-detail {
+        margin-left: 200px;
+        min-height: 100vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 20px;
+    }
+}
+
+.instructor-detail--alt {
+    background-color: #f9f9f9;
+}
+
+.instructor-detail__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.instructor-detail__image {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Altura mayor en desktop para aprovechar el viewport */
+@media (min-width: 1025px) {
+    .instructor-detail__image {
+        height: 80vh;
+        max-height: 800px;
+    }
+}
+
+.instructor-detail__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.instructor-detail__image:hover img {
+    transform: scale(1.05);
+}
+
+/* Ajuste específico para la imagen de Fabián */
+#fabian-soto .instructor-detail__image img {
+    object-position: center 30%;
+}
+
+/* Placeholder para instructores sin foto */
+.instructor-detail__image.placeholder {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.instructor-detail__image.placeholder img {
+    width: 60%;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.3;
+}
+
+.instructor-detail__content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+/* --- New Instructors Horizontal Layout --- */
+.instructores-horizontal {
+    display: flex;
+    gap: 0;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+}
+
+.instructor-item {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    cursor: pointer;
+    transition: flex 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    display: block;
+}
+
+.instructor-item img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: filter 0.5s ease;
+    filter: brightness(0.5);
+}
+
+.instructor-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.7) 100%);
+    pointer-events: none;
+    transition: background 0.5s ease;
+}
+
+.instructor-name {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    padding: 0 1rem;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.instructor-bio {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 3.5rem;
+    color: #fff;
+    padding: 0 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.instructor-bio p {
+    margin: 0;
+}
+
+/* Hover effects */
+.instructor-item:hover {
+    flex: 1.4;
+}
+
+.instructor-item:hover img {
+    filter: brightness(1);
+}
+
+.instructor-item:hover .instructor-overlay {
+    background: linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.instructor-item:hover .instructor-bio {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease 0.5s, transform 0.6s ease 0.5s;
+}
+
+/* Shrink non-hovered items */
+.instructores-horizontal:hover .instructor-item:not(:hover) {
+    flex: 0.85;
+}
+
+/* Responsive behavior */
+@media (max-width: 1024px) {
+    .instructores-horizontal {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .instructor-item {
+        height: 300px;
+    }
+
+    .instructor-item:hover {
+        flex: 1;
+    }
+
+    .instructores-horizontal:hover .instructor-item:not(:hover) {
+        flex: 1;
+    }
+}
+
+.instructor-detail__rank {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.instructor-detail__role {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.instructor-detail__bio {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Responsive para página de instructores */
+@media (max-width: 1024px) {
+    .instructor-detail__container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .instructor-detail__image {
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .instructor-detail {
+        padding: 30px 20px;
+    }
+
+    .instructor-detail__content h2 {
+        font-size: 1.6rem;
+    }
+
+    .instructor-detail__rank {
+        font-size: 1rem;
+    }
+
+    .instructor-detail__bio {
+        font-size: 0.95rem;
+    }
+
+    .instructor-detail__image {
+        height: 300px;
+    }
+}
+
+/* ==================== MENÚ DE NAVEGACIÓN STICKY DE INSTRUCTORES ==================== */
+
+.instructors-nav {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    pointer-events: none;
+}
+
+.instructors-nav__container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    pointer-events: auto;
+}
+
+.instructors-nav__btn {
+    min-width: 160px;
+    padding: 12px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: left;
+    text-decoration: none;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    line-height: 1.4;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.instructors-nav__btn:last-child {
+    border-bottom: none;
+}
+
+.instructors-nav__btn span {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #666;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-top: 3px;
+}
+
+.instructors-nav__btn:hover {
+    background-color: #e0e0e0;
+    color: #000;
+    padding-left: 25px;
+}
+
+.instructors-nav__btn.active {
+    background-color: #000;
+    color: #fff;
+    padding-left: 25px;
+}
+
+.instructors-nav__btn.active span {
+    color: #ccc;
+}
+
+/* Responsive para menú de instructores - Mobile horizontal en la parte superior */
+@media (max-width: 1024px) {
+    .instructors-nav {
+        position: sticky;
+        left: auto;
+        top: var(--header-offset, 120px);
+        transform: none;
+        background-color: transparent;
+        width: 100%;
+    }
+
+    .instructors-nav__container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .instructors-nav__btn {
+        flex: 1;
+        min-width: auto;
+        max-width: 180px;
+        padding: 10px 15px;
+        font-size: 0.75rem;
+        text-align: center;
+        border-bottom: none;
+        border-right: 1px solid #e0e0e0;
+    }
+
+    .instructors-nav__btn:last-child {
+        border-right: none;
+    }
+
+    .instructors-nav__btn:hover,
+    .instructors-nav__btn.active {
+        padding-left: 15px;
+    }
+
+    .instructors-nav__btn span {
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .instructors-nav__btn {
+        padding: 8px 10px;
+        font-size: 0.7rem;
+    }
+
+    .instructors-nav__btn span {
+        font-size: 0.6rem;
     }
 }
