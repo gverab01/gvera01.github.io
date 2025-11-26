@@ -66,7 +66,7 @@ main {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    height: 60px;
+    height: 70px;
 }
 
 /* Título del sitio - centrado horizontalmente en el viewport */
@@ -76,9 +76,9 @@ main {
     transform: translateX(-50%);
     margin: 0;
     z-index: 2;
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 5px;
+    height: 45px;
+    width: auto;
+    object-fit: contain;
     animation: revealUpCentered 1s ease forwards;
 }
 
@@ -89,9 +89,9 @@ main {
     top: 50%;
     transform: translateY(-50%);
     z-index: 3;
-    width: 120px;
-    height: 40px;
-    object-fit: cover;
+    height: 55px;
+    width: auto;
+    object-fit: contain;
 }
 
 /* Botón CTA - posicionado en el extremo derecho */
@@ -357,6 +357,11 @@ nav a {
     object-fit: cover;
     object-position: center;
     display: block;
+}
+
+/* Ajuste específico para la primera card (Defensa Personal) */
+.program-card:first-child img {
+    object-position: 75% center;
 }
 
 /* Texto superpuesto sobre la imagen */
@@ -666,9 +671,9 @@ nav a {
 .instructores-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+    gap: 30px;
     max-width: 900px;
-    margin: 0 auto 50px;
+    margin: 0 auto 30px;
 }
 
 /* Card de instructor */
@@ -696,7 +701,7 @@ nav a {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: center 15%;
     transition: transform 0.3s ease;
 }
 
@@ -706,29 +711,29 @@ nav a {
 
 /* Contenido de la card */
 .instructor-card__content {
-    padding: 30px 25px;
+    padding: 20px 20px;
     text-align: left;
 }
 
 .instructor-card__content h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     color: var(--text-color);
 }
 
 .instructor-card__rank {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: #666;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .instructor-card__bio {
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    line-height: 1.5;
     color: #555;
     font-weight: 300;
 }
@@ -736,15 +741,15 @@ nav a {
 /* CTA para ver más instructores */
 .instructores-cta {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .btn-instructores {
     display: inline-block;
-    padding: 15px 40px;
+    padding: 12px 35px;
     background-color: #000;
     color: #fff;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1653,5 +1658,467 @@ footer p:first-child {
 
     .page-hero p {
         font-size: 1rem;
+    }
+}
+
+/* ==================== PÁGINA DE PROGRAMAS ==================== */
+
+/* Hero de programas */
+.programas-hero {
+    background: linear-gradient(135deg, #000 0%, #333 100%);
+    color: white;
+    text-align: center;
+    padding: 100px 20px 60px;
+    margin-top: var(--header-offset, 120px);
+}
+
+.programas-hero__content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.programas-hero__content p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Sección de detalle de programa */
+.program-detail {
+    padding: 25px 20px;
+    background-color: #fff;
+}
+
+.program-detail--alt {
+    background-color: #f9f9f9;
+}
+
+.program-detail__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.program-detail__header {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    padding: 0 20px;
+}
+
+.program-detail__header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+.program-detail__description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 0;
+}
+
+.program-detail__image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.program-detail__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.program-detail__image:hover img {
+    transform: scale(1.05);
+}
+
+
+
+.program-detail__subtitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+
+.program-detail__features h3,
+.program-detail__age-groups h3,
+.program-detail__benefits h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #000;
+}
+
+.program-detail__features ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.program-detail__features ul li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.program-detail__features ul li i {
+    color: #000;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.program-detail__features ul li strong {
+    font-weight: 600;
+    color: #000;
+}
+
+/* Info items */
+.program-detail__info {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.info-item i {
+    color: #000;
+    font-size: 1.1rem;
+}
+
+/* Age groups */
+.age-groups {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.age-group {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.age-label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.age-group p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Benefits grid */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+.benefit-item i {
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.benefit-item span {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #555;
+}
+
+/* Botón de programa */
+.btn-program {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #000;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-program:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+/* Responsive para página de programas */
+@media (max-width: 1024px) {
+    .program-detail__container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .program-detail__image {
+        height: 400px;
+    }
+
+    .age-groups {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .programas-hero {
+        padding: 80px 20px 40px;
+    }
+
+    .programas-hero__content h1 {
+        font-size: 2rem;
+    }
+
+    .programas-hero__content p {
+        font-size: 1rem;
+    }
+
+    .program-detail {
+        padding: 40px 20px;
+    }
+
+    .program-detail__content h2 {
+        font-size: 2rem;
+    }
+
+    .program-detail__subtitle {
+        font-size: 1rem;
+    }
+
+    .program-detail__image {
+        height: 300px;
+    }
+
+    .program-detail__info {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn-program {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ==================== MENÚ DE NAVEGACIÓN STICKY DE PROGRAMAS ==================== */
+
+.programs-nav {
+    position: sticky;
+    top: var(--header-offset, 120px);
+    background-color: transparent;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.programs-nav__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    pointer-events: auto;
+}
+
+.programs-nav__btn {
+    flex: 0 1 auto;
+    min-width: 180px;
+    padding: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.programs-nav__btn:hover {
+    background-color: #e0e0e0;
+    color: #000;
+}
+
+.programs-nav__btn.active {
+    background-color: #000;
+    color: #fff;
+}
+
+
+
+/* Responsive para menú de programas */
+@media (max-width: 768px) {
+    .programs-nav__container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .programs-nav__btn {
+        flex: 1;
+        min-width: auto;
+        padding: 10px 15px;
+        font-size: 0.8rem;
+    }
+}
+
+/* ==================== PÁGINA DE INSTRUCTORES ==================== */
+
+.instructors-page {
+    padding: 60px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.instructors-page__header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.instructors-page__header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.instructors-page__header p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.instructors-page__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Estilo especial para el primer instructor (destacado) */
+.instructor-card--large {
+    grid-column: span 2;
+}
+
+.instructor-card--large .instructor-card__image {
+    height: 400px;
+}
+
+.instructor-card--large .instructor-card__content h3 {
+    font-size: 1.8rem;
+}
+
+.instructor-card--large .instructor-card__bio {
+    font-size: 1.05rem;
+}
+
+/* Placeholder para instructores sin foto */
+.instructor-card__image.placeholder {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.instructor-card__image.placeholder img {
+    width: 60%;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.3;
+}
+
+/* Responsive para página de instructores */
+@media (max-width: 1024px) {
+    .instructor-card--large {
+        grid-column: span 1;
+    }
+
+    .instructors-page__grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .instructors-page {
+        padding: 40px 20px;
+    }
+
+    .instructors-page__header h1 {
+        font-size: 2rem;
+    }
+
+    .instructors-page__header p {
+        font-size: 1rem;
+    }
+
+    .instructors-page__grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .instructor-card--large .instructor-card__image {
+        height: 300px;
     }
 }
