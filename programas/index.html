@@ -130,12 +130,12 @@
                             <span>Clases de 60 minutos</span>
                         </div>
                         <div class="info-item">
-                            <i class="fas fa-users"></i>
-                            <span>Grupos reducidos</span>
-                        </div>
-                        <div class="info-item">
                             <i class="fas fa-calendar"></i>
                             <span>3 veces por semana</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-users"></i>
+                            <span>Grupos reducidos</span>
                         </div>
                     </div>
                     <a href="https://gabriel-vera.reservio.com" class="btn-program">Agenda tu Clase de Prueba</a>
@@ -184,12 +184,12 @@
                             <span>Clases de 45-60 minutos</span>
                         </div>
                         <div class="info-item">
-                            <i class="fas fa-users"></i>
-                            <span>Grupos por edad (3-5, 6-8, 9-13 años)</span>
-                        </div>
-                        <div class="info-item">
                             <i class="fas fa-calendar"></i>
                             <span>2-3 veces por semana</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-users"></i>
+                            <span>Grupos por edad (3-5, 6-8, 9-13 años)</span>
                         </div>
                     </div>
                     <a href="https://gabriel-vera.reservio.com" class="btn-program">Agenda tu Clase de Prueba</a>
@@ -242,12 +242,12 @@
                             <span>Clases de 60-90 minutos</span>
                         </div>
                         <div class="info-item">
-                            <i class="fas fa-users"></i>
-                            <span>Todos los niveles (Fundamentals, Advanced, Pro)</span>
-                        </div>
-                        <div class="info-item">
                             <i class="fas fa-calendar"></i>
                             <span>Clases diarias disponibles</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-users"></i>
+                            <span>Todos los niveles (Fundamentals, Advanced, Pro)</span>
                         </div>
                     </div>
                     <a href="https://gabriel-vera.reservio.com" class="btn-program">Agenda tu Clase de Prueba</a>
@@ -381,6 +381,23 @@
                 if (window.location.hash) {
                     var hashId = window.location.hash.substring(1);
                     updateActiveButton(hashId);
+
+                    // Hacer scroll con offset correcto después de que la página cargue
+                    window.addEventListener('load', function () {
+                        var targetSection = document.getElementById(hashId);
+                        if (targetSection) {
+                            var header = document.querySelector('header');
+                            var programsNav = document.querySelector('.programs-nav');
+                            var offset = (header ? header.offsetHeight : 0) + (programsNav ? programsNav.offsetHeight : 0);
+
+                            var targetPosition = targetSection.offsetTop - offset;
+
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
                 }
             })();
         })();
