@@ -283,6 +283,95 @@ nav a {
 }
 
 
+/* ==================== HERO OVERLAY & CONTENT ==================== */
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Oscurecer video para legibilidad */
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 900px;
+    text-align: center;
+    z-index: 2;
+    color: #ffffff;
+}
+
+.philosophy-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5vh;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.philosophy-description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    font-weight: 400;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 3vh;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.philosophy-quote {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-weight: 300;
+    line-height: 1.6;
+    color: #ffffff;
+    font-style: italic;
+    margin-bottom: 2vh;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.philosophy-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .philosophy {
+        padding: 6vh 20px;
+    }
+
+    .philosophy-quote {
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
+
+    .philosophy-subtitle {
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+    }
+}
+
+
 /* ==================== SECCIÓN PROGRAMAS ==================== */
 
 /* Contenedor de la sección programas */
@@ -981,9 +1070,8 @@ nav a {
 /* CTA para ver más FAQs */
 .faqs-cta {
     text-align: center;
-    margin-top: 50px;
-    padding-top: 40px;
-    border-top: 1px solid #e0e0e0;
+    margin-top: 3vh;
+    padding-top: 2vh;
 }
 
 .faqs-cta__text {
@@ -1036,7 +1124,7 @@ nav a {
 /* ==================== SECCIÓN CONTACTO ==================== */
 
 .contacto {
-    padding: 5vh 20px 3vh 20px;
+    padding: 5vh 20px 2vh 20px;
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -1055,22 +1143,22 @@ nav a {
 .contacto>p {
     font-size: 0.95rem;
     color: #666;
-    margin-bottom: 50px;
+    margin-bottom: 2vh;
 }
 
 /* Grid de contacto */
 .contacto-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 2vh;
     max-width: 1000px;
-    margin: 0 auto 40px;
+    margin: 0 auto 2vh;
 }
 
 /* Card de contacto */
 .contacto-card {
     text-align: center;
-    padding: 30px 20px;
+    padding: 2vh 10px;
 }
 
 .contacto-card__icon {
@@ -1121,7 +1209,7 @@ nav a {
 /* Redes sociales */
 .contacto-social {
     text-align: center;
-    padding: 40px 20px;
+    padding: 2vh 20px;
     background-color: var(--secondary-background-color);
     border-radius: 12px;
     max-width: 600px;
@@ -1131,7 +1219,7 @@ nav a {
 .contacto-social h3 {
     font-size: 1.3rem;
     font-weight: 700;
-    margin-bottom: 25px;
+    margin-bottom: 1.5vh;
 }
 
 .social-links {
