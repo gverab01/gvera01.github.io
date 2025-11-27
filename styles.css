@@ -288,14 +288,14 @@ nav a {
 /* Contenedor de la sección programas */
 
 .programas {
-    padding: 30px 20px 40px 20px;
+    padding: 5vh 20px 3vh 20px;
     text-align: center;
     margin: 0 auto;
     max-width: 1200px;
-    min-height: 70vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .programas h2 {
@@ -307,7 +307,7 @@ nav a {
 .programas>p {
     font-size: 0.95rem;
     color: #666;
-    margin-bottom: 40px;
+    margin-bottom: 2vh;
 }
 
 /* Contenedor de las cards de programas - disposición horizontal */
@@ -495,14 +495,14 @@ nav a {
 /* ==================== SECCIÓN HORARIOS ==================== */
 
 .horarios {
-    padding: 30px 20px 40px 20px;
+    padding: 5vh 20px 3vh 20px;
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
-    min-height: 70vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .horarios h2 {
@@ -686,14 +686,14 @@ nav a {
 /* ==================== SECCIÓN INSTRUCTORES ==================== */
 
 .instructores {
-    padding: 30px 20px 40px 20px;
+    padding: 5vh 20px 3vh 20px;
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
-    min-height: 70vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .instructores h2 {
@@ -705,7 +705,7 @@ nav a {
 .instructores>p {
     font-size: 0.95rem;
     color: #666;
-    margin-bottom: 40px;
+    margin-bottom: 2vh;
 }
 
 
@@ -716,14 +716,14 @@ nav a {
 /* ==================== SECCIÓN SEDES ==================== */
 
 .sedes {
-    padding: 30px 20px 40px 20px;
+    padding: 5vh 20px 3vh 20px;
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
-    min-height: 70vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .sedes h2 {
@@ -817,6 +817,16 @@ nav a {
     flex-shrink: 0;
 }
 
+.sede-card__info a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sede-card__info a:hover {
+    color: var(--primary-color);
+}
+
 /* Mapa de la sede */
 .sede-card__map {
     margin: 20px 0;
@@ -883,14 +893,14 @@ nav a {
 /* ==================== SECCIÓN FAQS ==================== */
 
 .faqs {
-    padding: 30px 20px 40px 20px;
+    padding: 5vh 20px 3vh 20px;
     text-align: center;
     max-width: 1000px;
     margin: 0 auto;
-    min-height: 70vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .faqs h2 {
@@ -1026,14 +1036,14 @@ nav a {
 /* ==================== SECCIÓN CONTACTO ==================== */
 
 .contacto {
-    padding: 30px 20px 40px 20px;
+    padding: 5vh 20px 3vh 20px;
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
-    min-height: 70vh;
+    min-height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .contacto h2 {
@@ -1254,75 +1264,6 @@ footer p:first-child {
 }
 
 
-
-
-/* ==================== MEDIA QUERIES - PANTALLAS GRANDES ==================== */
-
-/* Monitores de 24" y superiores: restaurar padding original para mejor espaciado */
-@media (min-width: 1920px) {
-
-    /* Padding general para la mayoría de secciones */
-    .horarios,
-    .instructores,
-    .sedes,
-    .faqs,
-    .contacto {
-        padding: 60px 20px;
-    }
-
-    .page-faqs {
-        padding: 60px 20px;
-    }
-
-    /* Sección Programas: padding aumentado para mejor espaciado */
-    .programas {
-        padding: 40px 20px 60px 20px;
-    }
-
-    .programas h2 {
-        font-size: 3rem;
-        margin-bottom: 10px;
-    }
-
-    .programas>p {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-    }
-
-    /* Cards de programas significativamente más altas en pantallas grandes */
-    .program-card {
-        min-height: 600px;
-        max-width: 450px;
-    }
-
-    .program-card__text h3 {
-        font-size: 1.5rem;
-    }
-
-    .program-card__text h2 {
-        font-size: 2.5rem;
-    }
-
-    /* Cards de instructores más altas */
-    .instructor-card__image {
-        height: 400px;
-    }
-
-    /* Ajustes de espaciado para sección Instructores */
-    .instructores {
-        padding: 40px 20px 60px 20px;
-    }
-
-    .instructores h2 {
-        font-size: 3rem;
-        margin-bottom: 10px;
-    }
-
-    .instructores>p {
-        font-size: 1.2rem;
-        margin-bottom: 30px;
-    }
-}
 
 /* ==================== MEDIA QUERIES - TABLETS ==================== */
 
