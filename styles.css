@@ -1,4 +1,4 @@
-/* ==================== RESET Y CONFIGURACIÓN GLOBAL ==================== */
+/* ==================== 1. RESET Y CONFIGURACIÓN GLOBAL ==================== */
 
 /** Reset de estilos por defecto del navegador **/
 * {
@@ -38,7 +38,7 @@ ul {
 }
 
 
-/* ==================== HEADER FIJO ==================== */
+/* ==================== 2. LAYOUT (HEADER & NAVBAR) ==================== */
 
 /* Header fijo en la parte superior del viewport */
 header {
@@ -55,9 +55,6 @@ header {
 main {
     margin-top: var(--header-offset);
 }
-
-
-/* ==================== HEADER TOP ==================== */
 
 /* Contenedor superior del header con logo, título y CTA */
 .header-top {
@@ -102,25 +99,29 @@ main {
     transform: translateY(-50%);
     z-index: 3;
     display: inline-block;
-    color: var(--text-color);
-    padding: 10px 15px;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
     border-radius: 5px;
-    font-weight: 400;
+    font-weight: 600;
     text-decoration: none;
-    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .cta:hover {
-    color: lightgray;
+    background-color: #333;
+    transform: translateY(-52%);
+    /* Slight lift effect, keeping vertical centering */
+    color: #fff;
 }
 
 /* Botón toggle de navegación móvil (oculto por defecto) */
 .nav-toggle {
     display: none;
 }
-
-
-/* ==================== NAVBAR ==================== */
 
 /* Barra de navegación */
 .navbar {
@@ -171,8 +172,39 @@ nav a {
 }
 
 
-/* ==================== BOTÓN FLOTANTE DE WHATSAPP ==================== */
+/* ==================== 3. COMPONENTS (BUTTONS, ANIMATIONS, MISC) ==================== */
 
+/* Botones Globales */
+.btn-program,
+.btn-instructor,
+.btn-programas,
+.btn-faqs {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #000;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-instructor {
+    margin-top: 2vh;
+}
+
+.btn-program:hover,
+.btn-instructor:hover,
+.btn-programas:hover,
+.btn-faqs:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+/* Botón flotante de WhatsApp */
 .whatsapp-float {
     position: fixed;
     width: 60px;
@@ -197,10 +229,71 @@ nav a {
     transform: scale(1.1);
 }
 
+/* Animaciones */
+@keyframes revealUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
 
-/* ==================== SECCIÓN HERO ==================== */
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-/* Contenedor principal del hero - ocupa todo el viewport disponible */
+@keyframes revealUpCentered {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+@keyframes fadeInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==================== 4. HOME SECTIONS ==================== */
+
+/* --- HERO SECTION --- */
 .hero {
     position: relative;
     width: 100%;
@@ -212,7 +305,6 @@ nav a {
     background-color: #000;
 }
 
-/* Imagen hero para desktop */
 .hero-image {
     width: 100vw;
     object-fit: contain;
@@ -220,7 +312,6 @@ nav a {
     margin: 0 auto;
 }
 
-/* Video hero para desktop */
 .hero-video {
     position: absolute;
     top: 0;
@@ -231,7 +322,6 @@ nav a {
     pointer-events: none;
 }
 
-/* Títulos del hero (si se usan) */
 .hero h2 {
     font-size: 2.5rem;
     margin-top: 50px;
@@ -246,10 +336,6 @@ nav a {
     animation: revealUpCentered 1.5s ease forwards;
 }
 
-
-/* ==================== CARRUSEL HERO (MÓVIL) ==================== */
-
-/* Carrusel para dispositivos móviles */
 .hero-carousel {
     display: none;
     position: relative;
@@ -283,9 +369,6 @@ nav a {
     opacity: 1;
 }
 
-
-/* ==================== HERO OVERLAY & CONTENT ==================== */
-
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -293,7 +376,6 @@ nav a {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    /* Oscurecer video para legibilidad */
     z-index: 1;
     pointer-events: none;
 }
@@ -364,52 +446,7 @@ nav a {
     opacity: 0;
 }
 
-/* Animaciones */
-@keyframes fadeInFromTop {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInFromBottom {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 768px) {
-    .philosophy {
-        padding: 6vh 20px;
-    }
-
-    .philosophy-quote {
-        font-size: 1.2rem;
-        line-height: 1.5;
-    }
-
-    .philosophy-subtitle {
-        font-size: 0.75rem;
-        letter-spacing: 1.5px;
-    }
-}
-
-
-/* ==================== SECCIÓN PROGRAMAS ==================== */
-
-/* Contenedor de la sección programas */
-
+/* --- PROGRAMAS SECTION --- */
 .programas {
     padding: 5vh 20px 3vh 20px;
     text-align: center;
@@ -433,7 +470,6 @@ nav a {
     margin-bottom: 2vh;
 }
 
-/* Contenedor de las cards de programas - disposición horizontal */
 .program-cards {
     display: flex;
     flex-direction: row;
@@ -442,16 +478,6 @@ nav a {
     gap: 1.5rem;
     flex-wrap: wrap;
 }
-
-
-/* ==================== CARDS DE PROGRAMAS ==================== */
-
-/**
- * Estructura simplificada:
- * - La card es el contenedor con position relative
- * - La imagen y el texto están superpuestos
- * - No hay espacio extra debajo de la imagen
- */
 
 .program-card {
     position: relative;
@@ -462,16 +488,9 @@ nav a {
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    /* Estilos para que el anchor se comporte como bloque */
     display: block;
     text-decoration: none;
     color: inherit;
-}
-
-@media (max-width: 768px) {
-    .program-card {
-        min-height: 500px;
-    }
 }
 
 .program-card:hover {
@@ -480,7 +499,6 @@ nav a {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* Imagen que ocupa toda la card */
 .program-card img {
     position: absolute;
     top: 0;
@@ -492,12 +510,10 @@ nav a {
     display: block;
 }
 
-/* Ajuste específico para la primera card (Defensa Personal) */
 .program-card:first-child img {
     object-position: 75% center;
 }
 
-/* Texto superpuesto sobre la imagen */
 .program-card__text {
     position: absolute;
     top: 0;
@@ -514,27 +530,19 @@ nav a {
     transition: background 0.3s ease;
 }
 
-/* Hover: aclarar el overlay */
 .program-card:hover .program-card__text {
     background: rgba(0, 0, 0, 0.25);
 }
 
-/* Hover en el texto: achicar ligeramente el texto */
 .program-card__text:hover h2,
 .program-card__text:hover h3 {
     transform: scale(0.80);
     transition: transform 0.5s ease;
 }
 
-/* Al retirar el hover del texto, volver al tamaño original suavemente */
 .program-card__text h2,
 .program-card__text h3 {
     transition: transform 0.5s ease;
-}
-
-/* Estilos del texto */
-.program-card__text h2,
-.program-card__text h3 {
     color: white;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
     margin: 0;
@@ -552,8 +560,6 @@ nav a {
     font-weight: 700;
 }
 
-
-/* CTA para ver más programas */
 .programas-cta {
     text-align: center;
     margin-top: 50px;
@@ -567,56 +573,7 @@ nav a {
     margin-bottom: 20px;
 }
 
-.btn-programas {
-    display: inline-block;
-    padding: 15px 40px;
-    background-color: #000;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-programas:hover {
-    background-color: #333;
-    transform: translateY(-2px);
-}
-
-
-/* ==================== ANIMACIONES ==================== */
-
-/* Animación de revelación vertical desde abajo */
-@keyframes revealUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Animación de revelación manteniendo el centrado horizontal */
-@keyframes revealUpCentered {
-    from {
-        opacity: 0;
-        transform: translate(-50%, 30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translate(-50%, 0);
-    }
-}
-
-/* ==================== SECCIÓN HORARIOS ==================== */
-
+/* --- HORARIOS SECTION --- */
 .horarios {
     padding: 5vh 20px 3vh 20px;
     text-align: center;
@@ -766,20 +723,7 @@ nav a {
     border-bottom: none;
 }
 
-/* Animación de fade in */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsive */
+/* Responsive Horarios */
 @media (max-width: 768px) {
     .horarios h2 {
         font-size: 2rem;
@@ -806,8 +750,8 @@ nav a {
     }
 }
 
-/* ==================== SECCIÓN INSTRUCTORES ==================== */
 
+/* --- INSTRUCTORES SECTION (HOME) --- */
 .instructores {
     padding: 5vh 20px 3vh 20px;
     text-align: center;
@@ -831,13 +775,134 @@ nav a {
     margin-bottom: 2vh;
 }
 
+/* Horizontal Accordion Layout */
+.instructores-horizontal {
+    display: flex;
+    gap: 0;
+    width: 100%;
+    height: 65vh;
+    overflow: hidden;
+}
+
+.instructor-item {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    cursor: pointer;
+    transition: flex 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    display: block;
+}
+
+.instructor-item img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: filter 0.5s ease;
+    filter: brightness(0.5);
+}
+
+.instructor-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.7) 100%);
+    pointer-events: none;
+    transition: background 0.5s ease;
+}
+
+.instructor-name {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    padding: 0 1rem;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.instructor-bio {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 3.5rem;
+    color: #fff;
+    padding: 0 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.instructor-bio p {
+    margin: 0;
+}
+
+/* Hover effects */
+.instructor-item:hover {
+    flex: 1.4;
+}
+
+.instructor-item:hover img {
+    filter: brightness(1);
+}
+
+.instructor-item:hover .instructor-overlay {
+    background: linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.instructor-item:hover .instructor-bio {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease 0.5s, transform 0.6s ease 0.5s;
+}
+
+/* Shrink non-hovered items */
+.instructores-horizontal:hover .instructor-item:not(:hover) {
+    flex: 0.85;
+}
+
+/* Responsive behavior */
+@media (max-width: 1024px) {
+    .instructores-horizontal {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .instructor-item {
+        height: 300px;
+    }
+
+    .instructor-item:hover {
+        flex: 1;
+    }
+
+    .instructores-horizontal:hover .instructor-item:not(:hover) {
+        flex: 1;
+    }
+}
 
 
-/* Responsive para instructores */
-
-
-/* ==================== SECCIÓN SEDES ==================== */
-
+/* --- SEDES SECTION --- */
 .sedes {
     padding: 5vh 20px 3vh 20px;
     text-align: center;
@@ -1013,8 +1078,8 @@ nav a {
     }
 }
 
-/* ==================== SECCIÓN FAQS ==================== */
 
+/* --- FAQS SECTION --- */
 .faqs {
     padding: 5vh 20px 3vh 20px;
     text-align: center;
@@ -1114,25 +1179,6 @@ nav a {
     margin-bottom: 20px;
 }
 
-.btn-faqs {
-    display: inline-block;
-    padding: 15px 40px;
-    background-color: #000;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-faqs:hover {
-    background-color: #333;
-    transform: translateY(-2px);
-}
-
 /* Responsive para FAQs */
 @media (max-width: 768px) {
     .faqs h2 {
@@ -1155,8 +1201,7 @@ nav a {
 }
 
 
-/* ==================== SECCIÓN CONTACTO ==================== */
-
+/* --- CONTACTO SECTION --- */
 .contacto {
     padding: 5vh 20px 2vh 20px;
     text-align: center;
@@ -1311,9 +1356,7 @@ nav a {
 }
 
 
-
-/* ==================== FOOTER ==================== */
-
+/* --- FOOTER --- */
 footer {
     background-color: var(--secondary-background-color);
     padding: 30px 20px;
@@ -1347,7 +1390,25 @@ footer p:first-child {
 }
 
 
-/* ==================== PÁGINA DE FAQS DETALLE ==================== */
+/* ==================== 5. INTERNAL PAGES ==================== */
+
+/* --- GENERAL INTERNAL --- */
+.page-hero {
+    padding: 80px 20px 60px;
+    text-align: center;
+    background-color: var(--secondary-background-color);
+}
+
+.page-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.page-hero p {
+    font-size: 1.2rem;
+    color: #666;
+}
 
 .page-faqs {
     max-width: 900px;
@@ -1367,261 +1428,8 @@ footer p:first-child {
     border-bottom: 2px solid var(--secondary-background-color);
 }
 
-/* Hero de página interna */
-.page-hero {
-    padding: 80px 20px 60px;
-    text-align: center;
-    background-color: var(--secondary-background-color);
-}
 
-.page-hero h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 15px;
-}
-
-.page-hero p {
-    font-size: 1.2rem;
-    color: #666;
-}
-
-
-
-/* ==================== MEDIA QUERIES - TABLETS ==================== */
-
-/* Tablets e iPad Pro: 2 cards por fila */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .program-cards {
-        gap: 1.5rem;
-        padding: 20px;
-    }
-
-    .program-card {
-        flex: 0 1 calc(50% - 1rem);
-        max-width: calc(50% - 1rem);
-        min-height: 360px;
-    }
-
-    .program-card__text h3 {
-        font-size: 1.2rem;
-    }
-
-    .program-card__text h2 {
-        font-size: 2rem;
-    }
-}
-
-
-/* ==================== MEDIA QUERIES - MÓVIL ==================== */
-
-@media (max-width: 768px) {
-
-    /* ----- HERO ----- */
-
-    /* Ocultar hero desktop y mostrar carrusel */
-    .hero-desktop {
-        display: none;
-    }
-
-    .hero-carousel {
-        display: block;
-    }
-
-    .hero {
-        align-items: stretch;
-    }
-
-
-    /* ----- HEADER ----- */
-
-    /* Ocultar título del sitio en móvil */
-    .nav-brand {
-        display: none;
-    }
-
-    /* Aumentar altura del header para que el logo quepa */
-    .header-top {
-        height: 120px;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 16px 20px;
-        position: relative;
-    }
-
-    /* Centrar logo en el viewport con espacio arriba */
-    .nav-logo {
-        position: static;
-        transform: none;
-        width: 140px;
-        height: 47px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    /* CTA siempre visible debajo del logo en móvil */
-    .cta {
-        position: static;
-        transform: none;
-        display: block;
-        margin: 12px auto 0;
-        padding: 10px 20px;
-        white-space: nowrap;
-        font-size: 0.9rem;
-        font-weight: 700;
-        text-align: center;
-        max-width: 200px;
-    }
-
-    /* ----- NAVEGACIÓN MÓVIL ----- */
-
-    /* Botón hamburguesa */
-    .nav-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 48px;
-        height: 48px;
-        background: var(--background-color);
-        border: none;
-        cursor: pointer;
-        position: absolute;
-        right: 18px;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 1001;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Barra del icono hamburguesa */
-    .nav-toggle .bar {
-        display: block;
-        width: 24px;
-        height: 2px;
-        background: #333;
-        position: relative;
-        transition: transform 0.25s ease, opacity 0.25s ease;
-    }
-
-    .nav-toggle .bar::before,
-    .nav-toggle .bar::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        width: 24px;
-        height: 2px;
-        background: #333;
-        transition: transform 0.25s ease;
-    }
-
-    .nav-toggle .bar::before {
-        top: -7px;
-    }
-
-    .nav-toggle .bar::after {
-        top: 7px;
-    }
-
-    /* Animación del hamburguesa a X cuando está abierto */
-    .nav-toggle.open .bar {
-        background: transparent;
-    }
-
-    .nav-toggle.open .bar::before {
-        transform: translateY(7px) rotate(45deg);
-    }
-
-    .nav-toggle.open .bar::after {
-        transform: translateY(-7px) rotate(-45deg);
-    }
-
-    /* Navbar: sin franja de color en móvil cuando está cerrado */
-    .navbar {
-        height: auto;
-        min-height: 0;
-        background-color: transparent;
-    }
-
-    .navbar ul {
-        display: none;
-        flex-direction: column;
-        gap: 0;
-        padding: 20px 12px;
-        background-color: var(--secondary-background-color);
-        margin: 0;
-    }
-
-    .navbar.open ul {
-        display: flex;
-    }
-
-    .navbar ul li {
-        display: block;
-        text-align: center;
-        padding: 12px 0;
-    }
-
-    .navbar ul li a {
-        display: block;
-        color: var(--text-color);
-        font-size: 1rem;
-        font-weight: 400;
-        padding: 8px 20px;
-        transition: background-color 0.2s ease;
-    }
-
-    .navbar ul li a:hover {
-        background-color: rgba(0, 0, 0, 0.05);
-        color: var(--text-color);
-    }
-
-    /* Ocultar separadores de puntos en menú móvil */
-    .navbar ul li:not(:last-child)::after {
-        display: none;
-    }
-
-    /* ----- PROGRAMAS ----- */
-
-    /* Apilar cards verticalmente en móvil */
-    .program-cards {
-        flex-direction: column;
-        gap: 1.5rem;
-        align-items: center;
-        padding-top: 20px;
-    }
-
-    .program-card {
-        flex: none;
-        width: 100%;
-        max-width: 500px;
-        min-height: 320px;
-    }
-
-    .program-card__text h3 {
-        font-size: 1.1rem;
-    }
-
-    .program-card__text h2 {
-        font-size: 1.8rem;
-    }
-
-    .page-hero {
-        padding: 60px 20px 40px;
-    }
-
-    .page-hero h1 {
-        font-size: 2rem;
-    }
-
-    .page-hero p {
-        font-size: 1rem;
-    }
-}
-
-/* ==================== PÁGINA DE PROGRAMAS ==================== */
-
-/* Hero de programas */
+/* --- PROGRAMAS PAGE --- */
 .programas-hero {
     background: linear-gradient(135deg, #000 0%, #333 100%);
     color: white;
@@ -1646,7 +1454,6 @@ footer p:first-child {
     line-height: 1.6;
 }
 
-/* Sección de detalle de programa */
 .program-detail {
     padding: 5vh 20px 3vh 20px;
     background-color: #fff;
@@ -1710,8 +1517,6 @@ footer p:first-child {
     transform: scale(1.05);
 }
 
-
-
 .program-detail__subtitle {
     font-size: 1rem;
     font-weight: 600;
@@ -1720,8 +1525,6 @@ footer p:first-child {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-
-
 
 .program-detail__features h3,
 .program-detail__age-groups h3,
@@ -1759,7 +1562,6 @@ footer p:first-child {
     color: #000;
 }
 
-/* Info items */
 .program-detail__info {
     display: flex;
     flex-direction: column;
@@ -1780,7 +1582,6 @@ footer p:first-child {
     font-size: 1.1rem;
 }
 
-/* Age groups */
 .age-groups {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1809,7 +1610,6 @@ footer p:first-child {
     margin: 0;
 }
 
-/* Benefits grid */
 .benefits-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1837,27 +1637,55 @@ footer p:first-child {
     color: #555;
 }
 
-/* Botón de programa */
-.btn-program {
-    display: inline-block;
-    padding: 15px 40px;
-    background-color: #000;
-    color: #fff;
-    font-size: 1rem;
+/* Menú de navegación sticky de programas */
+.programs-nav {
+    position: sticky;
+    top: var(--header-offset, 120px);
+    background-color: transparent;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.programs-nav__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    pointer-events: auto;
+}
+
+.programs-nav__btn {
+    flex: 0 1 auto;
+    min-width: 180px;
+    padding: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-align: center;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.btn-program:hover {
-    background-color: #333;
-    transform: translateY(-2px);
+.programs-nav__btn:hover {
+    background-color: #e0e0e0;
+    color: #000;
 }
 
-/* Responsive para página de programas */
+.programs-nav__btn.active {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Responsive Programas Page */
 @media (max-width: 1024px) {
     .program-detail__container {
         grid-template-columns: 1fr;
@@ -1915,61 +1743,7 @@ footer p:first-child {
         width: 100%;
         text-align: center;
     }
-}
 
-/* ==================== MENÚ DE NAVEGACIÓN STICKY DE PROGRAMAS ==================== */
-
-.programs-nav {
-    position: sticky;
-    top: var(--header-offset, 120px);
-    background-color: transparent;
-    z-index: 100;
-    pointer-events: none;
-}
-
-.programs-nav__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0;
-    pointer-events: auto;
-}
-
-.programs-nav__btn {
-    flex: 0 1 auto;
-    min-width: 180px;
-    padding: 10px 20px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-align: center;
-    text-decoration: none;
-    background-color: #f5f5f5;
-    color: #333;
-    margin: 0;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.programs-nav__btn:hover {
-    background-color: #e0e0e0;
-    color: #000;
-}
-
-.programs-nav__btn.active {
-    background-color: #000;
-    color: #fff;
-}
-
-
-
-/* Responsive para menú de programas */
-@media (max-width: 768px) {
     .programs-nav__container {
         flex-direction: row;
         flex-wrap: wrap;
@@ -1984,8 +1758,8 @@ footer p:first-child {
     }
 }
 
-/* ==================== PÁGINA DE INSTRUCTORES ==================== */
 
+/* --- INSTRUCTORES PAGE --- */
 .instructors-page {
     padding: 60px 20px;
     max-width: 1400px;
@@ -2018,7 +1792,6 @@ footer p:first-child {
     margin-top: 40px;
 }
 
-/* Estilo especial para el primer instructor (destacado) */
 .instructor-card--large {
     grid-column: span 2;
 }
@@ -2035,7 +1808,6 @@ footer p:first-child {
     font-size: 1.05rem;
 }
 
-/* Placeholder para instructores sin foto */
 .instructor-card__image.placeholder {
     background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
     display: flex;
@@ -2050,58 +1822,9 @@ footer p:first-child {
     opacity: 0.3;
 }
 
-/* Responsive para página de instructores */
-@media (max-width: 1024px) {
-    .instructor-card--large {
-        grid-column: span 1;
-    }
-
-    .instructors-page__grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 25px;
-    }
-}
-
-@media (max-width: 768px) {
-    .instructors-page {
-        padding: 40px 20px;
-    }
-
-    .instructors-page__header h1 {
-        font-size: 2rem;
-    }
-
-    .instructors-page__header p {
-        font-size: 1rem;
-    }
-
-    .instructors-page__grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .instructor-card--large .instructor-card__image {
-        height: 300px;
-    }
-}
-
-/* ==================== PÁGINA DE INSTRUCTORES (SECCIONES) ==================== */
-
 .instructor-detail {
     padding: 40px 20px;
     background-color: #fff;
-}
-
-/* Margen izquierdo en desktop para el navbar vertical */
-@media (min-width: 1025px) {
-    .instructor-detail {
-        margin-left: 200px;
-        min-height: 100vh;
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        padding: 20px;
-    }
 }
 
 .instructor-detail--alt {
@@ -2125,14 +1848,6 @@ footer p:first-child {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* Altura mayor en desktop para aprovechar el viewport */
-@media (min-width: 1025px) {
-    .instructor-detail__image {
-        height: 70vh;
-        max-height: 800px;
-    }
-}
-
 .instructor-detail__image img {
     width: 100%;
     height: 100%;
@@ -2145,12 +1860,10 @@ footer p:first-child {
     transform: scale(1.05);
 }
 
-/* Ajuste específico para la imagen de Fabián */
 #fabian-soto .instructor-detail__image img {
     object-position: center 30%;
 }
 
-/* Placeholder para instructores sin foto */
 .instructor-detail__image.placeholder {
     background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
     display: flex;
@@ -2170,138 +1883,6 @@ footer p:first-child {
     font-weight: 700;
     margin-bottom: 10px;
     color: #000;
-}
-
-/* --- New Instructors Horizontal Layout --- */
-.instructores-horizontal {
-    display: flex;
-    gap: 0;
-    width: 100%;
-    height: 65vh;
-    overflow: hidden;
-}
-
-@media (max-width: 768px) {
-    .instructores-horizontal {
-        height: 500px;
-    }
-}
-
-.instructor-item {
-    position: relative;
-    flex: 1;
-    overflow: hidden;
-    cursor: pointer;
-    transition: flex 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    text-decoration: none;
-    display: block;
-}
-
-.instructor-item img {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transition: filter 0.5s ease;
-    filter: brightness(0.5);
-}
-
-.instructor-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.7) 100%);
-    pointer-events: none;
-    transition: background 0.5s ease;
-}
-
-.instructor-name {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    margin: 0;
-    padding: 0 1rem;
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-align: center;
-    line-height: 1.3;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    pointer-events: none;
-    z-index: 2;
-}
-
-.instructor-bio {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 3.5rem;
-    color: #fff;
-    padding: 0 1.5rem;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
-    pointer-events: none;
-    z-index: 2;
-}
-
-.instructor-bio p {
-    margin: 0;
-}
-
-/* Hover effects */
-.instructor-item:hover {
-    flex: 1.4;
-}
-
-.instructor-item:hover img {
-    filter: brightness(1);
-}
-
-.instructor-item:hover .instructor-overlay {
-    background: linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, 0.5) 100%);
-}
-
-.instructor-item:hover .instructor-bio {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.6s ease 0.5s, transform 0.6s ease 0.5s;
-}
-
-/* Shrink non-hovered items */
-.instructores-horizontal:hover .instructor-item:not(:hover) {
-    flex: 0.85;
-}
-
-/* Responsive behavior */
-@media (max-width: 1024px) {
-    .instructores-horizontal {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .instructor-item {
-        height: 300px;
-    }
-
-    .instructor-item:hover {
-        flex: 1;
-    }
-
-    .instructores-horizontal:hover .instructor-item:not(:hover) {
-        flex: 1;
-    }
 }
 
 .instructor-detail__rank {
@@ -2326,42 +1907,7 @@ footer p:first-child {
     color: #555;
 }
 
-/* Responsive para página de instructores */
-@media (max-width: 1024px) {
-    .instructor-detail__container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .instructor-detail__image {
-        height: 350px;
-    }
-}
-
-@media (max-width: 768px) {
-    .instructor-detail {
-        padding: 30px 20px;
-    }
-
-    .instructor-detail__content h2 {
-        font-size: 1.6rem;
-    }
-
-    .instructor-detail__rank {
-        font-size: 1rem;
-    }
-
-    .instructor-detail__bio {
-        font-size: 0.95rem;
-    }
-
-    .instructor-detail__image {
-        height: 300px;
-    }
-}
-
-/* ==================== MENÚ DE NAVEGACIÓN STICKY DE INSTRUCTORES ==================== */
-
+/* Menú de navegación sticky de instructores */
 .instructors-nav {
     position: fixed;
     left: 20px;
@@ -2427,8 +1973,85 @@ footer p:first-child {
     color: #ccc;
 }
 
-/* Responsive para menú de instructores - Mobile horizontal en la parte superior */
+
+/* --- SHARED INTERNAL COMPONENTS --- */
+
+/* CTA Final para páginas internas (Sedes, FAQs) */
+.sedes-cta-final {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    margin-top: 40px;
+}
+
+.sedes-cta-final h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.sedes-cta-final p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.btn-sedes {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #000;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-sedes:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+/* Responsive Instructors Page */
+@media (min-width: 1025px) {
+    .instructor-detail {
+        margin-left: 200px;
+        min-height: 100vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .instructor-detail__image {
+        height: 70vh;
+        max-height: 800px;
+    }
+}
+
 @media (max-width: 1024px) {
+    .instructor-card--large {
+        grid-column: span 1;
+    }
+
+    .instructors-page__grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+
+    .instructor-detail__container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .instructor-detail__image {
+        height: 350px;
+    }
+
     .instructors-nav {
         position: sticky;
         left: auto;
@@ -2472,6 +2095,47 @@ footer p:first-child {
 }
 
 @media (max-width: 768px) {
+    .instructors-page {
+        padding: 40px 20px;
+    }
+
+    .instructors-page__header h1 {
+        font-size: 2rem;
+    }
+
+    .instructors-page__header p {
+        font-size: 1rem;
+    }
+
+    .instructors-page__grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .instructor-card--large .instructor-card__image {
+        height: 300px;
+    }
+
+    .instructor-detail {
+        padding: 30px 20px;
+    }
+
+    .instructor-detail__content h2 {
+        font-size: 1.6rem;
+    }
+
+    .instructor-detail__rank {
+        font-size: 1rem;
+    }
+
+    .instructor-detail__bio {
+        font-size: 0.95rem;
+    }
+
+    .instructor-detail__image {
+        height: 300px;
+    }
+
     .instructors-nav__btn {
         padding: 8px 10px;
         font-size: 0.7rem;
@@ -2480,6 +2144,34 @@ footer p:first-child {
     .instructors-nav__btn span {
         font-size: 0.6rem;
     }
+}
+
+
+/* ==================== 6. GLOBAL RESPONSIVE (REMAINING) ==================== */
+
+/* Tablets e iPad Pro: 2 cards por fila */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .program-cards {
+        gap: 1.5rem;
+        padding: 20px;
+    }
+
+    .program-card {
+        flex: 0 1 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+        min-height: 360px;
+    }
+
+    .program-card__text h3 {
+        font-size: 1.2rem;
+    }
+
+    .program-card__text h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
 
     /* Reset de altura mínima para secciones en móvil */
     .programas,
@@ -2490,5 +2182,17 @@ footer p:first-child {
     .contacto {
         min-height: auto;
         display: block;
+    }
+
+    .page-hero {
+        padding: 60px 20px 40px;
+    }
+
+    .page-hero h1 {
+        font-size: 2rem;
+    }
+
+    .page-hero p {
+        font-size: 1rem;
     }
 }
