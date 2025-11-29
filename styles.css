@@ -888,7 +888,12 @@ nav a {
     .instructor-item {
         flex: none;
         width: 100%;
-        height: 300px;
+        height: 500px;
+    }
+
+    .instructor-item img {
+        object-fit: cover;
+        filter: brightness(1);
     }
 
     .instructor-item:hover {
@@ -2361,6 +2366,11 @@ footer p:first-child {
     .contacto {
         min-height: auto;
         display: block;
+    }
+
+    /* Reducir overlay oscuro en tarjetas de programas para mobile */
+    .program-card__text {
+        background: rgba(0, 0, 0, 0.15);
     }
 
     .page-hero {
