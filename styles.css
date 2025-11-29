@@ -2402,7 +2402,7 @@ footer p:first-child {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        padding: 2vh 5%;
+        padding: 10vh 5%;
         gap: 0;
     }
 
