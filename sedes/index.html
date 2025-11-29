@@ -12,7 +12,7 @@
     <link rel="icon" type="image/webp" href="assets/icons/edj_favicon.png">
 
     <!-- Hojas de estilo -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Fuente Montserrat -->
@@ -31,9 +31,12 @@
     <!-- ==================== HEADER SECTION ==================== -->
     <header>
         <div class="header-top">
-            <h1 class="nav-brand">EDJ CHILE</h1>
-            <a href="index.html">
-                <img src="./assets/img/EDJ_300_100.png" alt="logo EDJ Chile" class="nav-logo">
+            <!-- Título del sitio (oculto en mobile) -->
+            <img src="../assets/img/EDJ_LOGO_2.png" alt="EDJ CHILE" class="nav-brand">
+
+            <!-- Logo -->
+            <a href="../index.html#hero">
+                <img src="../assets/img/EDJ_LOGO_1.png" alt="logo EDJ Chile" class="nav-logo">
             </a>
             <a href="#trial" class="cta">Agenda Clase de Prueba</a>
             <button class="nav-toggle" aria-label="Abrir navegación" aria-expanded="false">
@@ -50,6 +53,8 @@
                 <li><a href="../index.html#horarios">Horarios</a></li>
                 <li><a href="../index.html#faqs">Preguntas Frecuentes</a></li>
                 <li><a href="../index.html#contacto">Contacto</a></li>
+                <li class="mobile-cta"><a href="https://gabriel-vera.reservio.com" class="btn-nav-mobile">Agenda Clase
+                        de Prueba</a></li>
             </ul>
         </nav>
     </header>
@@ -65,50 +70,7 @@
         <!-- Sedes detalladas -->
         <section class="sedes-detalle">
 
-            <!-- Sede 1: Providencia -->
-            <div class="sede-detalle-card" id="providencia">
-                <div class="sede-detalle-content">
-                    <div class="sede-detalle-info">
-                        <div class="sede-detalle-header">
-                            <h2>Providencia</h2>
-                            <span class="sede-badge">Matriz</span>
-                        </div>
-
-                        <div class="sede-detalle-body">
-                            <div class="info-group">
-                                <h3><i class="fas fa-map-marker-alt"></i> Dirección</h3>
-                                <p>Av. Providencia 1234, Oficina 567<br>Providencia, Santiago</p>
-                            </div>
-
-                            <div class="info-group">
-                                <h3><i class="fas fa-phone"></i> Contacto</h3>
-                                <p>Teléfono: +56 9 1234 5678<br>Email: providencia@edjchile.cl</p>
-                            </div>
-
-                            <div class="info-group">
-                                <h3><i class="fas fa-user-tie"></i> Responsable</h3>
-                                <p>Fabián Soto<br>Cinturón Negro - 1er Grado</p>
-                            </div>
-
-                            <div class="info-group">
-                                <h3><i class="fas fa-clock"></i> Horarios</h3>
-                                <p>Lunes a Viernes: 6:00 - 21:00<br>Sábado: 9:00 - 14:00<br>Domingo: Cerrado</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sede-detalle-map">
-                        <!-- Mapa de Google Maps - Reemplaza con tu ubicación real -->
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.8076927421567!2d-70.61405092425992!3d-33.429370797337046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf5f37c8ad29%3A0x6733d01b6b4867e5!2sAv.%20Providencia%2C%20Providencia%2C%20Regi%C3%B3n%20Metropolitana%2C%20Chile!5e0!3m2!1ses!2scl!4v1234567890123"
-                            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sede 2: Las Condes -->
+            <!-- Sede 1: Las Condes -->
             <div class="sede-detalle-card" id="las-condes">
                 <div class="sede-detalle-content">
                     <div class="sede-detalle-info">
@@ -120,17 +82,17 @@
                         <div class="sede-detalle-body">
                             <div class="info-group">
                                 <h3><i class="fas fa-map-marker-alt"></i> Dirección</h3>
-                                <p>Av. Apoquindo 5678, Local 123<br>Las Condes, Santiago</p>
+                                <p>Av. Apoquindo 7446<br>Las Condes, Santiago</p>
                             </div>
 
                             <div class="info-group">
                                 <h3><i class="fas fa-phone"></i> Contacto</h3>
-                                <p>Teléfono: +56 9 8765 4321<br>Email: lascondes@edjchile.cl</p>
+                                <p>Teléfono: +569 7216 72 23<br>Email: contacto@edjchile.cl</p>
                             </div>
 
                             <div class="info-group">
                                 <h3><i class="fas fa-user-tie"></i> Responsable</h3>
-                                <p>María Jesús Rojas<br>Cinturón Negro</p>
+                                <p>Fabián Soto<br>Cinturón Negro, 1er Grado</p>
                             </div>
 
                             <div class="info-group">
@@ -151,7 +113,92 @@
                 </div>
             </div>
 
-            <!-- Aquí puedes agregar las otras 3 sedes con la misma estructura -->
+            <!-- Sede 2: Chillán -->
+            <div class="sede-detalle-card" id="chillan">
+                <div class="sede-detalle-content">
+                    <div class="sede-detalle-info">
+                        <div class="sede-detalle-header">
+                            <h2>Chillán</h2>
+                            <span class="sede-badge">Sede Chillán</span>
+                        </div>
+
+                        <div class="sede-detalle-body">
+                            <div class="info-group">
+                                <h3><i class="fas fa-map-marker-alt"></i> Dirección</h3>
+                                <p>Av. Collín 1101<br>Chillán, Chile</p>
+                            </div>
+
+                            <div class="info-group">
+                                <h3><i class="fas fa-phone"></i> Contacto</h3>
+                                <p>Teléfono: +569 6745 55 97<br>Email: edjchillan@gmail.com</p>
+                            </div>
+
+                            <div class="info-group">
+                                <h3><i class="fas fa-user-tie"></i> Responsable</h3>
+                                <p>Diego Peña<br>Cinturón Marrón</p>
+                            </div>
+
+                            <div class="info-group">
+                                <h3><i class="fas fa-clock"></i> Horarios</h3>
+                                <p>Lunes a Viernes: 7:00 - 22:00<br>Sábado: 8:00 - 15:00<br>Domingo: Cerrado</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sede-detalle-map">
+                        <!-- Mapa de Google Maps - Reemplaza con tu ubicación real -->
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.6024658887467!2d-70.57844042426093!3d-33.41351459736368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf0a5bc8e89f%3A0x81e4e89cc0b6c72a!2sAv.%20Apoquindo%2C%20Las%20Condes%2C%20Regi%C3%B3n%20Metropolitana%2C%20Chile!5e0!3m2!1ses!2scl!4v1234567890123"
+                            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sede 3: V Región -->
+            <div class="sede-detalle-card" id="v-region">
+                <div class="sede-detalle-content">
+                    <div class="sede-detalle-info">
+                        <div class="sede-detalle-header">
+                            <h2>V Región</h2>
+                            <span class="sede-badge">Sede V Región</span>
+                        </div>
+
+                        <div class="sede-detalle-body">
+                            <div class="info-group">
+                                <h3><i class="fas fa-map-marker-alt"></i> Dirección</h3>
+                                <p>El Sauce 485<br>San Antonio, V Región</p>
+                            </div>
+
+                            <div class="info-group">
+                                <h3><i class="fas fa-phone"></i> Contacto</h3>
+                                <p>Teléfono: +569 6745 55 97<br>Email: edjvregion@gmail.com</p>
+                            </div>
+
+                            <div class="info-group">
+                                <h3><i class="fas fa-user-tie"></i> Responsable</h3>
+                                <p>Javier Jeria<br>Cinturón Marrón</p>
+                            </div>
+
+                            <div class="info-group">
+                                <h3><i class="fas fa-clock"></i> Horarios</h3>
+                                <p>Lunes a Viernes: 7:00 - 22:00<br>Sábado: 8:00 - 15:00<br>Domingo: Cerrado</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sede-detalle-map">
+                        <!-- Mapa de Google Maps - Reemplaza con tu ubicación real -->
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.6024658887467!2d-70.57844042426093!3d-33.41351459736368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf0a5bc8e89f%3A0x81e4e89cc0b6c72a!2sAv.%20Apoquindo%2C%20Las%20Condes%2C%20Regi%C3%B3n%20Metropolitana%2C%20Chile!5e0!3m2!1ses!2scl!4v1234567890123"
+                            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
 
         </section>
 
@@ -166,10 +213,12 @@
     <!-- ==================== FOOTER SECTION ==================== -->
     <footer>
         <p>&copy; 2025 EDJ Chile. Todos los derechos reservados.</p>
+        <p class="footer-credit">Desarrollado por <a href="https://gvera.dev" target="_blank"
+                rel="noopener noreferrer">gvera.dev</a></p>
     </footer>
 
     <!-- Script de navegación móvil (reutilizado) -->
-    <script src="main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
