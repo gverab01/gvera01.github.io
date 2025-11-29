@@ -2379,6 +2379,11 @@ footer p:first-child {
 /* Responsive Navigation (Hamburger Menu) */
 @media (max-width: 1024px) {
 
+    /* Hacer overlay transparente en mobile */
+    .hero-overlay {
+        background: transparent;
+    }
+
     /* Reposicionar contenido del hero para aprovechar el letterbox en mobile */
     .hero-content {
         top: 0;
