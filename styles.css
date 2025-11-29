@@ -2370,7 +2370,7 @@ footer p:first-child {
 
     /* Reducir overlay oscuro en tarjetas de programas para mobile */
     .program-card__text {
-        background: rgba(0, 0, 0, 0.15);
+        background: transparent;
     }
 
     .page-hero {
