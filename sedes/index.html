@@ -5,11 +5,170 @@
     <!-- Meta tags básicos -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="EDJ Chile">
+    <meta name="theme-color" content="#000000">
+    <meta name="keywords"
+        content="sedes jiu jitsu chile, bjj las condes, bjj providencia, bjj chillán, bjj valparaiso, gimnasio jiu jitsu santiago">
     <title>Nuestras Sedes - EDJ Chile</title>
     <meta name="description"
         content="Encuentra todas nuestras sedes de Jiu Jitsu en Santiago. Ubicaciones, horarios y contacto." />
-    <link rel="canonical" href="https://www.edjchile.cl/sedes.html">
-    <link rel="icon" type="image/webp" href="assets/icons/edj_favicon.png">
+    <link rel="canonical" href="https://www.edjchile.cl/sedes/">
+    <link rel="icon" type="image/png" href="../assets/img/EDJ_LOGO_1.png">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Nuestras Sedes - EDJ Chile" />
+    <meta property="og:description"
+        content="Encuentra todas nuestras sedes de Jiu Jitsu en Chile. Ubicaciones en Las Condes, Chillán y V Región. Horarios y contacto." />
+    <meta property="og:image" content="https://www.edjchile.cl/assets/img/EDJ_LOGO_1.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://www.edjchile.cl/sedes" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="EDJ Chile" />
+    <meta property="og:locale" content="es_CL" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Nuestras Sedes - EDJ Chile" />
+    <meta name="twitter:description"
+        content="Encuentra todas nuestras sedes de Jiu Jitsu en Chile. Ubicaciones, horarios y contacto." />
+    <meta name="twitter:image" content="https://www.edjchile.cl/assets/img/EDJ_LOGO_1.png" />
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Structured Data - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://www.edjchile.cl"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Sedes",
+          "item": "https://www.edjchile.cl/sedes"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data - LocalBusiness (Las Condes) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsActivityLocation",
+      "name": "EDJ Chile - Las Condes",
+      "image": "https://www.edjchile.cl/assets/img/EDJ_LOGO_1.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Apoquindo 7446",
+        "addressLocality": "Las Condes",
+        "addressRegion": "Región Metropolitana",
+        "addressCountry": "CL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-33.4135145",
+        "longitude": "-70.5784404"
+      },
+      "telephone": "+56972167223",
+      "email": "contacto@edjchile.cl",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "07:00",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "15:00"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data - LocalBusiness (Chillán) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsActivityLocation",
+      "name": "EDJ Chile - Chillán",
+      "image": "https://www.edjchile.cl/assets/img/EDJ_LOGO_1.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Collín 1101",
+        "addressLocality": "Chillán",
+        "addressRegion": "Región de Ñuble",
+        "addressCountry": "CL"
+      },
+      "telephone": "+56967455597",
+      "email": "edjchillan@gmail.com",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "07:00",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "15:00"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data - LocalBusiness (V Región) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsActivityLocation",
+      "name": "EDJ Chile - V Región",
+      "image": "https://www.edjchile.cl/assets/img/EDJ_LOGO_1.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "El Sauce 485",
+        "addressLocality": "San Antonio",
+        "addressRegion": "Región de Valparaíso",
+        "addressCountry": "CL"
+      },
+      "telephone": "+56950080889",
+      "email": "edjvregion@gmail.com",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "07:00",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "15:00"
+        }
+      ]
+    }
+    </script>
 
     <!-- Hojas de estilo -->
     <link rel="stylesheet" href="../styles.css">
@@ -24,7 +183,7 @@
 <body>
 
     <!-- Botón flotante de WhatsApp -->
-    <a href="https://wa.me/5691234567" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <a href="https://wa.me/56972167223" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
