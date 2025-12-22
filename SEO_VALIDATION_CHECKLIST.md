@@ -107,10 +107,10 @@ Use este checklist para verificar que todo está funcionando correctamente.
 ## 🔧 CONFIGURACIÓN EXTERNA
 
 ### Google Analytics
-- [ ] Cuenta creada en analytics.google.com
-- [ ] Propiedad "EDJ Chile" configurada
-- [ ] Measurement ID obtenido
-- [ ] ID reemplazado en las 5 páginas
+- [x] Cuenta creada en analytics.google.com
+- [x] Propiedad "EDJ Chile" configurada
+- [x] Measurement ID obtenido: G-3L6E4K6YC2
+- [x] ID implementado en las 5 páginas
 - [ ] Tracking verificado en tiempo real
 - [ ] Objetivos/conversiones configurados (opcional)
 
