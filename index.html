@@ -132,11 +132,402 @@
     }
     </script>
 
-    <!-- Hojas de estilo -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Fuente Montserrat - todos los pesos -->
+    <!-- Inlined Critical CSS -->
+    <style id="critical-css">
+        /* ==================== 1. RESET Y CONFIGURACIÓN GLOBAL ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --text-color: black;
+            --background-color: white;
+            --secondary-background-color: #F5F5F7;
+            --header-offset: 140px;
+        }
+
+        html {
+            scroll-padding-top: var(--header-offset);
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* ==================== 2. LAYOUT (HEADER & NAVBAR) ==================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 999;
+            background: var(--background-color);
+        }
+
+        main {
+            margin-top: var(--header-offset);
+        }
+
+        .header-top {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            height: 70px;
+        }
+
+        .nav-brand {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0;
+            z-index: 2;
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+            animation: revealUpCentered 1s ease forwards;
+        }
+
+        .nav-logo {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+            height: 55px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .cta {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+            display: inline-block;
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta:hover {
+            background-color: #333;
+            transform: translateY(-52%);
+            color: #fff;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .navbar {
+            background-color: var(--secondary-background-color);
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .navbar ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+
+        .navbar ul li {
+            color: var(--text-color);
+            list-style: none;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .navbar ul li:not(:last-child)::after {
+            content: "•";
+            margin: 0 0.6rem;
+            color: #666666;
+            font-size: 0.9rem;
+            line-height: 1;
+            display: inline-block;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 200;
+            transition: color 0.18s ease;
+        }
+
+        .navbar a:hover {
+            color: lightgray;
+        }
+
+        /* ==================== 3. ANIMATIONS ==================== */
+        @keyframes revealUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes revealUpCentered {
+            from {
+                opacity: 0;
+                transform: translate(-50%, 30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(-50%, 0);
+            }
+        }
+
+        @keyframes fadeInFromTop {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInFromBottom {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ==================== 4. HERO SECTION ==================== */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: calc(100vh - var(--header-offset));
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+        }
+
+        .hero-image {
+            width: 100vw;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-top: 50px;
+            text-align: center;
+            animation: revealUpCentered 1s ease forwards;
+        }
+
+        .hero h3 {
+            font-size: 1.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+            animation: revealUpCentered 1.5s ease forwards;
+        }
+
+        .hero-carousel {
+            display: none;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .hero-carousel .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.9s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-carousel .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .hero-carousel .slide.active {
+            opacity: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 900px;
+            text-align: center;
+            z-index: 2;
+            color: #ffffff;
+        }
+
+        .philosophy-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5vh;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInFromTop 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        .philosophy-description {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            font-weight: 400;
+            line-height: 1.6;
+            color: #ffffff;
+            margin-bottom: 3vh;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInFromTop 1s ease-out 0.3s forwards;
+            opacity: 0;
+        }
+
+        .philosophy-quote {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-weight: 300;
+            line-height: 1.6;
+            color: #ffffff;
+            font-style: italic;
+            margin-bottom: 2vh;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInFromBottom 1s ease-out 0.8s forwards;
+            opacity: 0;
+        }
+
+        .philosophy-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(0.85rem, 1.5vw, 1rem);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+            animation: fadeInFromBottom 1s ease-out 1.1s forwards;
+            opacity: 0;
+        }
+    </style>
+
+    <!-- Deferred Stylesheet and External Resources -->
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="styles.css">
+    </noscript>
+
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </noscript>
+
+    <!-- Montserrat Font -->
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -154,15 +545,16 @@
         <!-- Header superior: logo, título y CTA -->
         <div class="header-top">
             <!-- Título del sitio (oculto en mobile) -->
-            <img src="./assets/img/EDJ_LOGO_2.webp" alt="EDJ CHILE" class="nav-brand">
+            <img src="./assets/img/EDJ_LOGO_2.webp" alt="EDJ CHILE" class="nav-brand" width="1884" height="654">
 
             <!-- Logo -->
             <a href="#hero">
-                <img src="./assets/img/EDJ_LOGO_1.webp" alt="logo EDJ Chile" class="nav-logo">
+                <img src="./assets/img/EDJ_LOGO_1.webp" alt="logo EDJ Chile" class="nav-logo" width="1029"
+                    height="1029">
             </a>
 
             <!-- Botón CTA -->
-            <a href="https://www.edjlascondes.cl/reserva/" target="_blank" rel="noopener noreferrer" class="cta">Agenda
+            <a href="https://edjchile.cl/reserva" target="_blank" rel="noopener noreferrer" class="cta">Agenda
                 Clase de Prueba</a>
 
             <!-- Botón hamburguesa para navegación móvil -->
@@ -181,7 +573,7 @@
                 <li><a href="#horarios">Horarios</a></li>
                 <li><a href="#faqs">Preguntas Frecuentes</a></li>
                 <li><a href="#contacto">Contacto</a></li>
-                <li class="mobile-cta"><a href="https://www.edjlascondes.cl/reserva/" target="_blank"
+                <li class="mobile-cta"><a href="https://edjchile.cl/reserva" target="_blank"
                         rel="noopener noreferrer" class="btn-nav-mobile">Agenda Clase
                         de Prueba</a></li>
             </ul>
@@ -204,14 +596,15 @@
             <div class="hero-carousel" aria-hidden="false" aria-label="Hero carousel">
                 <div class="slide active">
                     <img src="./assets/img/program-defensa.webp" alt="Programa de Defensa Personal para Mujeres"
-                        loading="lazy">
+                        loading="lazy" width="543" height="405">
                 </div>
                 <div class="slide">
-                    <img src="./assets/img/program-ninos.webp" alt="Programa de Jiu Jitsu para Niños" loading="lazy">
+                    <img src="./assets/img/program-ninos.webp" alt="Programa de Jiu Jitsu para Niños" loading="lazy"
+                        width="1920" height="1280">
                 </div>
                 <div class="slide">
-                    <img src="./assets/img/program-adultos.webp" alt="Programa de Jiu Jitsu para Adultos"
-                        loading="lazy">
+                    <img src="./assets/img/program-adultos.webp" alt="Programa de Jiu Jitsu para Adultos" loading="lazy"
+                        width="1920" height="818">
                 </div>
             </div>
 
@@ -241,7 +634,8 @@
             <div class="program-cards">
                 <!-- Card 1: Defensa personal para mujeres -->
                 <a href="programas/#defensa-personal-mujeres" class="program-card">
-                    <img src="./assets/img/program-defensa.webp" alt="Programa de Defensa Personal para Mujeres">
+                    <img src="./assets/img/program-defensa.webp" alt="Programa de Defensa Personal para Mujeres"
+                        width="543" height="405">
                     <div class="program-card__text">
                         <h3>Defensa Personal para</h3>
                         <h2>Mujeres</h2>
@@ -250,7 +644,8 @@
 
                 <!-- Card 2: Programa para niños -->
                 <a href="programas/#programa-ninos" class="program-card">
-                    <img src="./assets/img/program-ninos.webp" alt="Programa de Jiu Jitsu para Niños">
+                    <img src="./assets/img/program-ninos.webp" alt="Programa de Jiu Jitsu para Niños" width="1920"
+                        height="1280">
                     <div class="program-card__text">
                         <h3>Jiu jitsu para</h3>
                         <h2>Niños</h2>
@@ -259,7 +654,8 @@
 
                 <!-- Card 3: Programa para adultos -->
                 <a href="programas/#programa-adultos" class="program-card">
-                    <img src="./assets/img/program-adultos.webp" alt="Programa de Jiu Jitsu para Adultos">
+                    <img src="./assets/img/program-adultos.webp" alt="Programa de Jiu Jitsu para Adultos" width="1920"
+                        height="818">
                     <div class="program-card__text">
                         <h3>Jiu jitsu para</h3>
                         <h2>Adultos</h2>
@@ -276,7 +672,8 @@
             <div class="instructores-horizontal">
                 <!-- Instructor 1: Juan Pablo García -->
                 <a href="instructores/#juan-pablo-garcia" class="instructor-item">
-                    <img src="./assets/img/Juan.webp" alt="Instructor Juan Pablo García - Cinturón Negro 4to Grado">
+                    <img src="./assets/img/Juan.webp" alt="Instructor Juan Pablo García - Cinturón Negro 4to Grado"
+                        width="1080" height="1080">
                     <div class="instructor-overlay"></div>
                     <h3 class="instructor-name">Juan Pablo<br>García</h3>
                     <div class="instructor-bio">
@@ -287,7 +684,8 @@
 
                 <!-- Instructor 2: Fabián Soto -->
                 <a href="instructores/#fabian-soto" class="instructor-item">
-                    <img src="./assets/img/fabian.webp" alt="Instructor Fabián Soto - Head Coach EDJ Chile">
+                    <img src="./assets/img/fabian.webp" alt="Instructor Fabián Soto - Head Coach EDJ Chile" width="900"
+                        height="1600">
                     <div class="instructor-overlay"></div>
                     <h3 class="instructor-name">Fabian<br>Soto</h3>
                     <div class="instructor-bio">
@@ -297,8 +695,8 @@
 
                 <!-- Instructor 3: María Jesús Rojas -->
                 <a href="instructores/#maria-jesus-rojas" class="instructor-item">
-                    <img src="./assets/img/jesu.webp"
-                        alt="Instructora María Jesús Rojas - Especialista Niños y Mujeres">
+                    <img src="./assets/img/jesu.webp" alt="Instructora María Jesús Rojas - Especialista Niños y Mujeres"
+                        width="1440" height="1080">
                     <div class="instructor-overlay"></div>
                     <h3 class="instructor-name">María Jesús<br>Rojas</h3>
                     <div class="instructor-bio">
@@ -308,7 +706,8 @@
 
                 <!-- Instructor 4: Diego Peña -->
                 <a href="instructores/#diego-pena" class="instructor-item">
-                    <img src="./assets/img/Diego.webp" alt="Instructor Diego Peña - Head Coach EDJ Chillán">
+                    <img src="./assets/img/Diego.webp" alt="Instructor Diego Peña - Head Coach EDJ Chillán" width="1080"
+                        height="1080">
                     <div class="instructor-overlay"></div>
                     <h3 class="instructor-name">Diego<br>Peña</h3>
                     <div class="instructor-bio">
@@ -318,7 +717,8 @@
 
                 <!-- Instructor 5: Javier Jeria -->
                 <a href="instructores/#javier-jeria" class="instructor-item">
-                    <img src="./assets/img/Javier.webp" alt="Instructor Javier Jeria - Head Coach EDJ V Región">
+                    <img src="./assets/img/Javier.webp" alt="Instructor Javier Jeria - Head Coach EDJ V Región"
+                        width="2761" height="4160">
                     <div class="instructor-overlay"></div>
                     <h3 class="instructor-name">Javier<br>Jeria</h3>
                     <div class="instructor-bio">
