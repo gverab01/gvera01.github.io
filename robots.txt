@@ -1,7 +1,6 @@
-# robots.txt para EDJ Chile
+# robots.txt para EDJ Las Condes
 # Este archivo indica a los motores de búsqueda qué páginas pueden rastrear
 
-# Permitir a todos los robots rastrear todo el sitio
 User-agent: *
 Allow: /
 
@@ -11,18 +10,4 @@ Disallow: /tmp/
 Disallow: /private/
 
 # Sitemap
-Sitemap: https://www.edjchile.cl/sitemap.xml
-
-# Configuración específica para bots de búsqueda principales
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-# Tiempo de espera entre peticiones (microsegundos)
-# Esto ayuda a evitar sobrecarga del servidor
-Crawl-delay: 1
+Sitemap: https://www.edjlascondes.cl/sitemap.xml

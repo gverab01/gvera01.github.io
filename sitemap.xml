@@ -6,40 +6,40 @@
 
     <!-- Página principal -->
     <url>
-        <loc>https://www.edjchile.cl/</loc>
-        <lastmod>2025-12-22</lastmod>
+        <loc>https://www.edjlascondes.cl/</loc>
+        <lastmod>2026-01-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
 
     <!-- Página de Instructores -->
     <url>
-        <loc>https://www.edjchile.cl/instructores/</loc>
-        <lastmod>2025-12-22</lastmod>
+        <loc>https://www.edjlascondes.cl/instructores/</loc>
+        <lastmod>2026-01-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <!-- Página de Programas -->
     <url>
-        <loc>https://www.edjchile.cl/programas/</loc>
-        <lastmod>2025-12-22</lastmod>
+        <loc>https://www.edjlascondes.cl/programas/</loc>
+        <lastmod>2026-01-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <!-- Página de Sedes -->
     <url>
-        <loc>https://www.edjchile.cl/sedes/</loc>
-        <lastmod>2025-12-22</lastmod>
+        <loc>https://www.edjlascondes.cl/sedes/</loc>
+        <lastmod>2026-01-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <!-- Página de FAQs -->
     <url>
-        <loc>https://www.edjchile.cl/faqs/</loc>
-        <lastmod>2025-12-22</lastmod>
+        <loc>https://www.edjlascondes.cl/faqs/</loc>
+        <lastmod>2026-01-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>

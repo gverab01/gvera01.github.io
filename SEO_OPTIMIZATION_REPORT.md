@@ -1,6 +1,6 @@
 # 📊 Reporte de Optimización SEO/SEM - EDJ Chile
 **Fecha:** 22 de Diciembre, 2025  
-**Proyecto:** https://www.edjchile.cl
+**Proyecto:** https://www.edjlascondes.cl
 
 ---
 
@@ -22,7 +22,7 @@ Se ha completado una optimización integral de SEO y SEM para todas las páginas
 ## 📄 PÁGINAS OPTIMIZADAS
 
 ### 1. **index.html** (Página Principal)
-**URL:** https://www.edjchile.cl/
+**URL:** https://www.edjlascondes.cl/
 
 #### Meta Tags Agregados:
 - `keywords`: jiu jitsu chile, bjj santiago, artes marciales las condes, etc.
@@ -48,7 +48,7 @@ Se ha completado una optimización integral de SEO y SEM para todas las páginas
 ---
 
 ### 2. **instructores/index.html**
-**URL:** https://www.edjchile.cl/instructores/
+**URL:** https://www.edjlascondes.cl/instructores/
 
 #### Meta Tags Agregados:
 - Todos los meta tags estándar de SEO
@@ -66,7 +66,7 @@ Se ha completado una optimización integral de SEO y SEM para todas las páginas
 ---
 
 ### 3. **programas/index.html**
-**URL:** https://www.edjchile.cl/programas/
+**URL:** https://www.edjlascondes.cl/programas/
 
 #### Meta Tags Agregados:
 - Keywords: programas jiu jitsu, defensa personal mujeres, jiu jitsu niños, etc.
@@ -81,7 +81,7 @@ Se ha completado una optimización integral de SEO y SEM para todas las páginas
 ---
 
 ### 4. **sedes/index.html**
-**URL:** https://www.edjchile.cl/sedes/
+**URL:** https://www.edjlascondes.cl/sedes/
 
 #### Meta Tags Agregados:
 - Keywords: sedes jiu jitsu, bjj las condes, bjj chillán, etc.
@@ -93,7 +93,7 @@ Se ha completado una optimización integral de SEO y SEM para todas las páginas
 **Las Condes:**
 - Dirección: Av. Apoquindo 7446
 - Teléfono: +56972167223
-- Email: contacto@edjchile.cl
+- Email: contacto@edjlascondes.cl
 - Horarios completos
 - Coordenadas GPS
 
@@ -112,7 +112,7 @@ Se ha completado una optimización integral de SEO y SEM para todas las páginas
 ---
 
 ### 5. **faqs/index.html**
-**URL:** https://www.edjchile.cl/faqs/
+**URL:** https://www.edjlascondes.cl/faqs/
 
 #### Meta Tags Agregados:
 - Keywords: preguntas jiu jitsu, faqs bjj, etc.
@@ -211,7 +211,7 @@ Posibilidad de aparecer con:
 
 1. **Google Search Console**
    - https://search.google.com/search-console
-   - Enviar sitemap: https://www.edjchile.cl/sitemap.xml
+   - Enviar sitemap: https://www.edjlascondes.cl/sitemap.xml
    - Verificar indexación de páginas
 
 2. **Rich Results Test (Google)**
