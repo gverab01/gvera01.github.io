@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Montserrat';
     src: url('assets/fonts/montserrat-latin.woff2') format('woff2-variations'),
-         url('assets/fonts/montserrat-latin.woff2') format('woff2');
+        url('assets/fonts/montserrat-latin.woff2') format('woff2');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -39,6 +39,12 @@ body {
     font-weight: 300;
     background-color: var(--background-color);
     color: var(--text-color);
+}
+
+/* Fix for H1UserAgentFontSizeInSection obsolete API warning */
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
 }
 
 /* Quitar decoración de listas */
@@ -1427,15 +1433,30 @@ footer p:first-child {
 
 /* --- GENERAL INTERNAL --- */
 .page-hero {
-    padding: 80px 20px 60px;
+    padding: 0 20px 60px;
     text-align: center;
     background-color: var(--secondary-background-color);
 }
 
-.page-hero h1 {
+.page-hero-title {
+    background-color: var(--secondary-background-color);
+    padding: 80px 20px 10px;
+    text-align: center;
     font-size: 3rem;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin: 0;
+}
+
+.page-header-title {
+    background-color: var(--bg-dark);
+    /* Assume it was bg-dark as in inline style */
+    color: var(--primary-color);
+    text-align: center;
+    padding: 4rem 1rem 0;
+    margin: 0;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .page-hero p {
