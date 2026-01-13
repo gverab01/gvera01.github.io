@@ -176,9 +176,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Fuente Montserrat -->
-    <link
+    <!-- Montserrat Font - Non-blocking -->
+    <link rel="preload"
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+    </noscript>
 </head>
 
 <body>
@@ -213,8 +219,8 @@
                 <li><a href="#horarios">Horarios</a></li>
                 <li><a href="#faqs">Preguntas Frecuentes</a></li>
                 <li><a href="#contacto">Contacto</a></li>
-                <li class="mobile-cta"><a href="https://edjchile.cl/reserva" target="_blank"
-                        rel="noopener noreferrer" class="btn-nav-mobile">Agenda Clase
+                <li class="mobile-cta"><a href="https://edjchile.cl/reserva" target="_blank" rel="noopener noreferrer"
+                        class="btn-nav-mobile">Agenda Clase
                         de Prueba</a></li>
             </ul>
         </nav>
@@ -367,8 +373,8 @@
         <section class="sedes-cta-final">
             <h2>¿Listo para comenzar?</h2>
             <p>Agenda tu clase de prueba gratuita en cualquiera de nuestras sedes</p>
-            <a href="https://edjchile.cl/reserva" target="_blank" rel="noopener noreferrer"
-                class="btn-sedes">Agenda Tu Clase</a>
+            <a href="https://edjchile.cl/reserva" target="_blank" rel="noopener noreferrer" class="btn-sedes">Agenda Tu
+                Clase</a>
         </section>
     </main>
 
