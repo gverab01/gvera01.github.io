@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('assets/fonts/montserrat-latin.woff2') format('woff2-variations'),
+         url('assets/fonts/montserrat-latin.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* ==================== 1. RESET Y CONFIGURACIÓN GLOBAL ==================== */
 
 /** Reset de estilos por defecto del navegador **/

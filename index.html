@@ -35,14 +35,36 @@
         content="Aprende BJJ & Defensa personal en Chile: Escuela en Las Condes. Ambiente familiar, disciplina y técnica para todas las edades. ¡Únete a la mejor comunidad de Brazilian Jiu Jitsu!" />
     <meta name="twitter:image" content="https://www.edjlascondes.cl/assets/img/EDJ_LOGO_1.webp" />
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3L6E4K6YC2"></script>
+    <!-- Google tag (gtag.js) - Deferred loading -->
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+        function loadGTM() {
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = "https://www.googletagmanager.com/gtag/js?id=G-3L6E4K6YC2";
+            document.head.appendChild(script);
 
-        gtag('config', 'G-3L6E4K6YC2');
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-3L6E4K6YC2');
+        }
+
+        // Load GTM after 3.5s or first interaction
+        var gtmLoaded = false;
+        function maybeLoadGTM() {
+            if (gtmLoaded) return;
+            gtmLoaded = true;
+            loadGTM();
+            window.removeEventListener('scroll', maybeLoadGTM);
+            window.removeEventListener('mousemove', maybeLoadGTM);
+            window.removeEventListener('touchstart', maybeLoadGTM);
+            clearTimeout(gtmTimeout);
+        }
+
+        var gtmTimeout = setTimeout(maybeLoadGTM, 3500);
+        window.addEventListener('scroll', maybeLoadGTM, { passive: true });
+        window.addEventListener('mousemove', maybeLoadGTM, { passive: true });
+        window.addEventListener('touchstart', maybeLoadGTM, { passive: true });
     </script>
 
     <!-- Structured Data - Organization -->
@@ -72,14 +94,20 @@
         {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "09:00",
-          "closes": "21:00"
+          "opens": "07:00",
+          "closes": "22:00"
         },
         {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": "Saturday",
           "opens": "09:00",
-          "closes": "14:00"
+          "closes": "13:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "13:00",
+          "closes": "15:00"
         }
       ],
       "sameAs": [
@@ -122,6 +150,22 @@
         },
         {
           "@type": "Question",
+          "name": "¿Las clases son seguras?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, la seguridad es nuestra prioridad. Todos nuestros instructores están certificados y las clases son supervisadas constantemente. El Jiu Jitsu es uno de los deportes de contacto más seguros cuando se practica correctamente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tiempo toma obtener el cinturón negro?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El tiempo varía según la dedicación y frecuencia de entrenamiento de cada persona. En promedio, se requieren entre 8 a 12 años de práctica constante. Lo importante es disfrutar el proceso de aprendizaje en cada etapa."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "¿Ofrecen clases de prueba gratuitas?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -132,9 +176,8 @@
     }
     </script>
 
-    <!-- Preconnect for Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font Preload -->
+    <link rel="preload" href="assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Inlined Critical CSS -->
     <style id="critical-css">
@@ -521,20 +564,16 @@
         <link rel="stylesheet" href="styles.css">
     </noscript>
 
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style"
+    <link rel="preload" href="assets/fontawesome/css/all.min.css" as="style"
         onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
     </noscript>
 
-    <!-- Montserrat Font - Non-blocking -->
-    <link rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- Montserrat Font - Local -->
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
     </noscript>
 </head>
 
@@ -550,12 +589,11 @@
         <!-- Header superior: logo, título y CTA -->
         <div class="header-top">
             <!-- Título del sitio (oculto en mobile) -->
-            <img src="./assets/img/EDJ_LOGO_2.webp" alt="EDJ CHILE" class="nav-brand" width="1884" height="654">
+            <img src="./assets/img/EDJ_LOGO_2.webp" alt="EDJ CHILE" class="nav-brand" width="400" height="139">
 
             <!-- Logo -->
             <a href="#hero">
-                <img src="./assets/img/EDJ_LOGO_1.webp" alt="logo EDJ Chile" class="nav-logo" width="1029"
-                    height="1029">
+                <img src="./assets/img/EDJ_LOGO_1.webp" alt="logo EDJ Chile" class="nav-logo" width="400" height="400">
             </a>
 
             <!-- Botón CTA -->
@@ -589,12 +627,11 @@
     <main>
         <!-- Sección Hero -->
         <section class="hero" id="hero">
-            <!-- Video hero para desktop -->
+            <!-- Video hero para desktop - Carga diferida via JS -->
             <div class="hero-desktop">
-                <iframe class="hero-video"
-                    src="https://www.youtube.com/embed/D55K9Vm_hEg?autoplay=1&mute=1&loop=1&playlist=D55K9Vm_hEg&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
-                    frameborder="0" allowfullscreen>
-                </iframe>
+                <div id="hero-youtube-placeholder" class="hero-video"
+                    data-src="https://www.youtube.com/embed/D55K9Vm_hEg?autoplay=1&mute=1&loop=1&playlist=D55K9Vm_hEg&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1">
+                </div>
             </div>
 
             <!-- Carrusel hero para mobile: usa las tres imágenes de programas -->
@@ -605,11 +642,11 @@
                 </div>
                 <div class="slide">
                     <img src="./assets/img/program-ninos.webp" alt="Programa de Jiu Jitsu para Niños" loading="lazy"
-                        width="1920" height="1280">
+                        width="1200" height="800">
                 </div>
                 <div class="slide">
                     <img src="./assets/img/program-adultos.webp" alt="Programa de Jiu Jitsu para Adultos" loading="lazy"
-                        width="1920" height="818">
+                        width="1200" height="512">
                 </div>
             </div>
 
@@ -678,7 +715,7 @@
                 <!-- Instructor 1: Juan Pablo García -->
                 <a href="instructores/#juan-pablo-garcia" class="instructor-item">
                     <img src="./assets/img/Juan.webp" alt="Instructor Juan Pablo García - Cinturón Negro 4to Grado"
-                        width="1080" height="1080">
+                        width="1200" height="1200">
                     <div class="instructor-overlay"></div>
                     <h3 class="instructor-name">Juan Pablo<br>García</h3>
                     <div class="instructor-bio">
@@ -689,8 +726,8 @@
 
                 <!-- Instructor 2: Fabián Soto -->
                 <a href="instructores/#fabian-soto" class="instructor-item">
-                    <img src="./assets/img/fabian.webp" alt="Instructor Fabián Soto - Head Coach EDJ Chile" width="900"
-                        height="1600">
+                    <img src="./assets/img/fabian.webp" alt="Instructor Fabián Soto - Head Coach EDJ Chile" width="1200"
+                        height="2134">
                     <div class="instructor-overlay"></div>
                     <h3 class="instructor-name">Fabian<br>Soto</h3>
                     <div class="instructor-bio">
@@ -701,7 +738,7 @@
                 <!-- Instructor 3: María Jesús Rojas -->
                 <a href="instructores/#maria-jesus-rojas" class="instructor-item">
                     <img src="./assets/img/jesu.webp" alt="Instructora María Jesús Rojas - Especialista Niños y Mujeres"
-                        width="1440" height="1080">
+                        width="1200" height="900">
                     <div class="instructor-overlay"></div>
                     <h3 class="instructor-name">María Jesús<br>Rojas</h3>
                     <div class="instructor-bio">
@@ -711,8 +748,8 @@
 
                 <!-- Instructor 4: Diego Peña -->
                 <a href="instructores/#diego-pena" class="instructor-item">
-                    <img src="./assets/img/Diego.webp" alt="Instructor Diego Peña - Head Coach EDJ Chillán" width="1080"
-                        height="1080">
+                    <img src="./assets/img/Diego.webp" alt="Instructor Diego Peña - Head Coach EDJ Chillán" width="1200"
+                        height="1200">
                     <div class="instructor-overlay"></div>
                     <h3 class="instructor-name">Diego<br>Peña</h3>
                     <div class="instructor-bio">
@@ -723,7 +760,7 @@
                 <!-- Instructor 5: Javier Jeria -->
                 <a href="instructores/#javier-jeria" class="instructor-item">
                     <img src="./assets/img/Javier.webp" alt="Instructor Javier Jeria - Head Coach EDJ V Región"
-                        width="2761" height="4160">
+                        width="1200" height="1809">
                     <div class="instructor-overlay"></div>
                     <h3 class="instructor-name">Javier<br>Jeria</h3>
                     <div class="instructor-bio">
@@ -1224,193 +1261,7 @@
     </footer>
 
     <!-- ==================== SCRIPTS ==================== -->
-    <script>
-        (function () {
-            // ========== ACTUALIZAR ALTURA DEL HEADER ==========
-
-            /**
-             * Actualiza la variable CSS --header-offset según la altura real del header
-             * Necesario para el scroll-padding-top y margin-top del main
-             */
-            function updateHeaderOffset() {
-                var header = document.querySelector('header');
-                if (!header) return;
-                var height = header.getBoundingClientRect().height;
-                document.documentElement.style.setProperty('--header-offset', height + 'px');
-            }
-
-            // Usar ResizeObserver para detectar cambios en el tamaño del header
-            if ('ResizeObserver' in window) {
-                var headerEl = document.querySelector('header');
-                if (headerEl) {
-                    var observer = new ResizeObserver(updateHeaderOffset);
-                    observer.observe(headerEl);
-                }
-            }
-
-            // Actualización inicial y en resize (fallback)
-            window.addEventListener('load', updateHeaderOffset);
-            window.addEventListener('resize', updateHeaderOffset);
-
-            // ========== CARRUSEL HERO MÓVIL ==========
-
-            /**
-             * Inicializa el carrusel del hero con transición crossfade entre slides
-             * Solo se activa en pantallas menores a 1024px
-             */
-            (function initHeroCarousel() {
-                var carousel = document.querySelector('.hero-carousel');
-                if (!carousel) return;
-
-                var slides = Array.prototype.slice.call(carousel.querySelectorAll('.slide'));
-                if (slides.length < 2) return;
-
-                var activeIndex = 0;
-                var intervalId = null;
-                var running = false;
-                var BREAKPOINT = 1024;
-
-                function showSlide(index) {
-                    slides.forEach(function (s, i) {
-                        s.classList.toggle('active', i === index);
-                    });
-                    activeIndex = index;
-                }
-
-                function nextSlide() {
-                    var next = (activeIndex + 1) % slides.length;
-                    showSlide(next);
-                }
-
-                function start() {
-                    if (running) return;
-                    running = true;
-                    intervalId = setInterval(nextSlide, 3500);
-                }
-
-                function stop() {
-                    running = false;
-                    if (intervalId) {
-                        clearInterval(intervalId);
-                        intervalId = null;
-                    }
-                }
-
-                function checkStartStop() {
-                    if (window.innerWidth <= BREAKPOINT) {
-                        start();
-                    } else {
-                        stop();
-                        showSlide(0);
-                    }
-                }
-
-                window.addEventListener('resize', checkStartStop);
-                window.addEventListener('orientationchange', checkStartStop);
-                window.addEventListener('load', checkStartStop);
-                checkStartStop();
-            })();
-
-            // ========== NAVEGACIÓN MÓVIL ==========
-
-            /**
-             * Controla el menú hamburguesa en dispositivos móviles
-             */
-            (function initNavToggle() {
-                var toggle = document.querySelector('.nav-toggle');
-                var navbar = document.querySelector('nav.navbar');
-                if (!toggle || !navbar) return;
-
-                // Toggle del menú
-                toggle.addEventListener('click', function () {
-                    var open = navbar.classList.toggle('open');
-                    toggle.classList.toggle('open', open);
-                    toggle.setAttribute('aria-expanded', !!open);
-                });
-
-                // Cerrar menú al hacer clic en un enlace
-                var links = navbar.querySelectorAll('a[href^="#"]');
-                links.forEach(function (a) {
-                    a.addEventListener('click', function () {
-                        if (navbar.classList.contains('open')) {
-                            navbar.classList.remove('open');
-                            toggle.classList.remove('open');
-                            toggle.setAttribute('aria-expanded', 'false');
-                        }
-                    });
-                });
-            })();
-        })();
-
-        // ========== TABS DE HORARIOS ==========
-
-        /**
-         * Controla la funcionalidad de pestañas para mostrar horarios por día
-         */
-        (function initScheduleTabs() {
-            var tabs = document.querySelectorAll('.schedule-tab');
-            var days = document.querySelectorAll('.schedule-day');
-
-            if (!tabs.length || !days.length) return;
-
-            tabs.forEach(function (tab) {
-                tab.addEventListener('click', function () {
-                    var targetDay = this.getAttribute('data-day');
-
-                    // Remover clase active de todas las tabs
-                    tabs.forEach(function (t) {
-                        t.classList.remove('active');
-                    });
-
-                    // Agregar clase active a la tab clickeada
-                    this.classList.add('active');
-
-                    // Ocultar todos los días
-                    days.forEach(function (day) {
-                        day.classList.remove('active');
-                    });
-
-                    // Mostrar el día seleccionado
-                    var targetElement = document.getElementById(targetDay);
-                    if (targetElement) {
-                        targetElement.classList.add('active');
-                    }
-                });
-            });
-        })();
-
-        // ========== ACCORDION DE FAQS ==========
-
-        /**
-         * Controla el comportamiento de accordion para las preguntas frecuentes
-         */
-        (function initFaqsAccordion() {
-            var faqItems = document.querySelectorAll('.faq-item');
-
-            if (!faqItems.length) return;
-
-            faqItems.forEach(function (item) {
-                var question = item.querySelector('.faq-question');
-
-                if (!question) return;
-
-                question.addEventListener('click', function () {
-                    // Toggle del item actual
-                    var isActive = item.classList.contains('active');
-
-                    // Cerrar todos los items
-                    faqItems.forEach(function (faq) {
-                        faq.classList.remove('active');
-                    });
-
-                    // Si no estaba activo, abrirlo
-                    if (!isActive) {
-                        item.classList.add('active');
-                    }
-                });
-            });
-        })();
-    </script>
+    <script src="assets/js/common.js" defer></script>
 </body>
 
 </html>

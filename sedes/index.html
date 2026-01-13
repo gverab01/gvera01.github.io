@@ -35,14 +35,36 @@
         content="Aprende BJJ & Defensa personal en Chile: Escuela en Las Condes. Ambiente familiar, disciplina y técnica para todas las edades. ¡Únete a la mejor comunidad de Brazilian Jiu Jitsu!" />
     <meta name="twitter:image" content="https://www.edjlascondes.cl/assets/img/EDJ_LOGO_1.webp" />
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3L6E4K6YC2"></script>
+    <!-- Google tag (gtag.js) - Deferred loading -->
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+        function loadGTM() {
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = "https://www.googletagmanager.com/gtag/js?id=G-3L6E4K6YC2";
+            document.head.appendChild(script);
 
-        gtag('config', 'G-3L6E4K6YC2');
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-3L6E4K6YC2');
+        }
+
+        // Load GTM after 3.5s or first interaction
+        var gtmLoaded = false;
+        function maybeLoadGTM() {
+            if (gtmLoaded) return;
+            gtmLoaded = true;
+            loadGTM();
+            window.removeEventListener('scroll', maybeLoadGTM);
+            window.removeEventListener('mousemove', maybeLoadGTM);
+            window.removeEventListener('touchstart', maybeLoadGTM);
+            clearTimeout(gtmTimeout);
+        }
+
+        var gtmTimeout = setTimeout(maybeLoadGTM, 3500);
+        window.addEventListener('scroll', maybeLoadGTM, { passive: true });
+        window.addEventListener('mousemove', maybeLoadGTM, { passive: true });
+        window.addEventListener('touchstart', maybeLoadGTM, { passive: true });
     </script>
 
     <!-- Structured Data - BreadcrumbList -->
@@ -175,15 +197,11 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <!-- Fuente Montserrat -->
-    <!-- Montserrat Font - Non-blocking -->
-    <link rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- Fuente Montserrat - Local -->
+    <link rel="preload" href="../assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet">
+        <link rel="stylesheet" href="../styles.css">
     </noscript>
 </head>
 
@@ -386,7 +404,7 @@
     </footer>
 
     <!-- Script de navegación móvil (reutilizado) -->
-    <script src="../js/main.js"></script>
+    <script src="../assets/js/common.js" defer></script>
 </body>
 
 </html>

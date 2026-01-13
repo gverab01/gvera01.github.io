@@ -35,14 +35,36 @@
         content="Aprende BJJ & Defensa personal en Chile: Escuela en Las Condes. Ambiente familiar, disciplina y técnica para todas las edades. ¡Únete a la mejor comunidad de Brazilian Jiu Jitsu!" />
     <meta name="twitter:image" content="https://www.edjlascondes.cl/assets/img/edj_270_270.webp" />
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3L6E4K6YC2"></script>
+    <!-- Google tag (gtag.js) - Deferred loading -->
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+        function loadGTM() {
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = "https://www.googletagmanager.com/gtag/js?id=G-3L6E4K6YC2";
+            document.head.appendChild(script);
 
-        gtag('config', 'G-3L6E4K6YC2');
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-3L6E4K6YC2');
+        }
+
+        // Load GTM after 3.5s or first interaction
+        var gtmLoaded = false;
+        function maybeLoadGTM() {
+            if (gtmLoaded) return;
+            gtmLoaded = true;
+            loadGTM();
+            window.removeEventListener('scroll', maybeLoadGTM);
+            window.removeEventListener('mousemove', maybeLoadGTM);
+            window.removeEventListener('touchstart', maybeLoadGTM);
+            clearTimeout(gtmTimeout);
+        }
+
+        var gtmTimeout = setTimeout(maybeLoadGTM, 3500);
+        window.addEventListener('scroll', maybeLoadGTM, { passive: true });
+        window.addEventListener('mousemove', maybeLoadGTM, { passive: true });
+        window.addEventListener('touchstart', maybeLoadGTM, { passive: true });
     </script>
 
     <!-- Structured Data - BreadcrumbList -->
@@ -119,15 +141,11 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <!-- Fuente Montserrat -->
-    <!-- Montserrat Font - Non-blocking -->
-    <link rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- Fuente Montserrat - Local -->
+    <link rel="preload" href="../assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet">
+        <link rel="stylesheet" href="../styles.css">
     </noscript>
 </head>
 
@@ -214,7 +232,7 @@
             <div class="program-detail__container">
                 <div class="program-detail__image">
                     <img src="../assets/img/program-defensa.webp"
-                        alt="Instructor en clase de Defensa Personal para Mujeres">
+                        alt="Instructor en clase de Defensa Personal para Mujeres" width="543" height="405">
                 </div>
                 <div class="program-detail__content">
                     <div class="program-detail__benefits">
@@ -311,7 +329,8 @@
                         class="btn-program">Agenda tu Clase de Prueba</a>
                 </div>
                 <div class="program-detail__image">
-                    <img src="../assets/img/program-ninos.webp" alt="Clase de Jiu Jitsu para Niños en EDJ Chile">
+                    <img src="../assets/img/program-ninos.webp" alt="Clase de Jiu Jitsu para Niños en EDJ Chile"
+                        width="1200" height="800">
                 </div>
             </div>
         </section>
@@ -327,7 +346,8 @@
             </div>
             <div class="program-detail__container">
                 <div class="program-detail__image">
-                    <img src="../assets/img/program-adultos.webp" alt="Clase de Jiu Jitsu para Adultos en EDJ Chile">
+                    <img src="../assets/img/program-adultos.webp" alt="Clase de Jiu Jitsu para Adultos en EDJ Chile"
+                        width="1200" height="512">
                 </div>
                 <div class="program-detail__content">
 
@@ -381,144 +401,7 @@
                 rel="noopener noreferrer">gvera.dev</a></p>
     </footer>
 
-    <!-- ==================== SCRIPTS ==================== -->
-    <script>
-        (function () {
-            // ========== ACTUALIZAR ALTURA DEL HEADER ==========
-            function updateHeaderOffset() {
-                var header = document.querySelector('header');
-                if (!header) return;
-                var height = header.getBoundingClientRect().height;
-                document.documentElement.style.setProperty('--header-offset', height + 'px');
-            }
-
-            if ('ResizeObserver' in window) {
-                var headerEl = document.querySelector('header');
-                if (headerEl) {
-                    var observer = new ResizeObserver(updateHeaderOffset);
-                    observer.observe(headerEl);
-                }
-            }
-
-            window.addEventListener('load', updateHeaderOffset);
-            window.addEventListener('resize', updateHeaderOffset);
-
-            // ========== NAVEGACIÓN MÓVIL ==========
-            (function initNavToggle() {
-                var toggle = document.querySelector('.nav-toggle');
-                var navbar = document.querySelector('nav.navbar');
-                if (!toggle || !navbar) return;
-
-                toggle.addEventListener('click', function () {
-                    var open = navbar.classList.toggle('open');
-                    toggle.classList.toggle('open', open);
-                    toggle.setAttribute('aria-expanded', !!open);
-                });
-
-                var links = navbar.querySelectorAll('a');
-                links.forEach(function (a) {
-                    a.addEventListener('click', function () {
-                        if (navbar.classList.contains('open')) {
-                            navbar.classList.remove('open');
-                            toggle.classList.remove('open');
-                            toggle.setAttribute('aria-expanded', 'false');
-                        }
-                    });
-                });
-            })();
-
-            // ========== NAVEGACIÓN DE PROGRAMAS ==========
-            (function initProgramsNav() {
-                var navButtons = document.querySelectorAll('.programs-nav__btn');
-                var sections = document.querySelectorAll('.program-detail');
-
-                if (!navButtons.length || !sections.length) return;
-
-                // Función para actualizar el botón activo
-                function updateActiveButton(targetId) {
-                    navButtons.forEach(function (btn) {
-                        if (btn.getAttribute('data-target') === targetId) {
-                            btn.classList.add('active');
-                        } else {
-                            btn.classList.remove('active');
-                        }
-                    });
-                }
-
-                // Click en botones
-                navButtons.forEach(function (btn) {
-                    btn.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        var targetId = this.getAttribute('data-target');
-                        var targetSection = document.getElementById(targetId);
-
-                        if (targetSection) {
-                            // Calcular offset del header + nav sticky
-                            var header = document.querySelector('header');
-                            var programsNav = document.querySelector('.programs-nav');
-                            var offset = (header ? header.offsetHeight : 0) + (programsNav ? programsNav.offsetHeight : 0);
-
-                            var targetPosition = targetSection.offsetTop - offset;
-
-                            window.scrollTo({
-                                top: targetPosition,
-                                behavior: 'smooth'
-                            });
-
-                            updateActiveButton(targetId);
-                        }
-                    });
-                });
-
-                // Actualizar botón activo al hacer scroll
-                var ticking = false;
-                function onScroll() {
-                    if (!ticking) {
-                        window.requestAnimationFrame(function () {
-                            var scrollPos = window.scrollY + window.innerHeight / 2;
-
-                            sections.forEach(function (section) {
-                                var sectionTop = section.offsetTop;
-                                var sectionBottom = sectionTop + section.offsetHeight;
-
-                                if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
-                                    updateActiveButton(section.id);
-                                }
-                            });
-
-                            ticking = false;
-                        });
-                        ticking = true;
-                    }
-                }
-
-                window.addEventListener('scroll', onScroll);
-
-                // Actualizar al cargar si hay hash en la URL
-                if (window.location.hash) {
-                    var hashId = window.location.hash.substring(1);
-                    updateActiveButton(hashId);
-
-                    // Hacer scroll con offset correcto después de que la página cargue
-                    window.addEventListener('load', function () {
-                        var targetSection = document.getElementById(hashId);
-                        if (targetSection) {
-                            var header = document.querySelector('header');
-                            var programsNav = document.querySelector('.programs-nav');
-                            var offset = (header ? header.offsetHeight : 0) + (programsNav ? programsNav.offsetHeight : 0);
-
-                            var targetPosition = targetSection.offsetTop - offset;
-
-                            window.scrollTo({
-                                top: targetPosition,
-                                behavior: 'smooth'
-                            });
-                        }
-                    });
-                }
-            })();
-        })();
-    </script>
+    <script src="../assets/js/common.js" defer></script>
 </body>
 
 </html>
